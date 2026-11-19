@@ -3,374 +3,402 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Reinvent Yourself</title>
+<title>Reinvent Yourself | The Missing P</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Young+Serif&family=Nunito+Sans:opsz,wght@6..12,400;6..12,600;6..12,700;6..12,800&family=Caveat:wght@600;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Young+Serif&family=Nunito+Sans:opsz,wght@6..12,400;6..12,600;6..12,700;6..12,800&family=Caveat:wght@700&display=swap">
 <style>
-/* Warm & human, photo-first. Real rooms, real people, Sir Usman's own words.
-   Layout: a workshop scrapbook kept by the facilitator: big photos, handwritten notes, his phrases as index cards. */
+/* Warm & human, but systematic: one clear section after another, each with the same header pattern.
+   Sand + deep teal + saffron. Young Serif headings, Nunito Sans body. */
 :root{
   --ink:#2A2420; --soft:#6B6058; --sand:#F5EFE7; --paper:#FFFDF9; --line:#E8DED2;
-  --sun:#E39B2D; --sun-d:#B9761A; --teal:#1D5C63; --teal-l:#DCEBEA;
+  --sun:#E39B2D; --sun-d:#B9761A; --teal:#1D5C63; --teal-d:#164A50; --teal-l:#DCEBEA;
   --fd:"Young Serif",Georgia,serif; --fb:"Nunito Sans",system-ui,-apple-system,"Segoe UI",sans-serif; --fh:"Caveat","Segoe Print",cursive;
   color-scheme:light;
 }
-*{box-sizing:border-box}[hidden]{display:none!important} html{scroll-behavior:smooth}
+*{box-sizing:border-box}[hidden]{display:none!important}
+html{scroll-behavior:smooth}
 body{margin:0;background:var(--paper);color:var(--ink);font:17px/1.65 var(--fb);-webkit-font-smoothing:antialiased}
 img,video{display:block;max-width:100%}
 p,ul,ol,figure,blockquote{margin:0}
 .wrap{max-width:1120px;margin:0 auto;padding-left:max(18px,env(safe-area-inset-left,0px));padding-right:max(18px,env(safe-area-inset-right,0px))}
-section{padding-block:80px;scroll-margin-top:64px}
-h1,h2,h3{font-family:var(--fd);font-weight:400;margin:0;line-height:1.1;text-wrap:balance}
-h2{font-size:clamp(1.9rem,4.4vw,2.8rem);margin-bottom:14px}
-.note{font:700 1.45rem/1.15 var(--fh);color:var(--sun-d)}
-.lead{color:var(--soft);max-width:60ch;font-size:1.08rem}
-.btn{display:inline-flex;align-items:center;gap:10px;padding:15px 24px;border-radius:999px;background:var(--teal);color:#fff;font:700 1rem var(--fb);text-decoration:none;transition:transform .2s,background .2s}
-.btn:hover{background:#164A50;transform:translateY(-2px)}
+section{padding-block:76px;scroll-margin-top:110px}
+h1,h2,h3{font-family:var(--fd);font-weight:400;margin:0;line-height:1.12;text-wrap:balance}
+h2{font-size:clamp(1.8rem,4vw,2.6rem)}
+.lead{color:var(--soft);max-width:62ch;font-size:1.06rem}
+.btn{display:inline-flex;align-items:center;gap:10px;padding:14px 24px;border-radius:999px;background:var(--teal);color:#fff;font:700 1rem var(--fb);text-decoration:none;transition:transform .2s,background .2s;border:0;cursor:pointer}
+.btn:hover{background:var(--teal-d);transform:translateY(-2px)}
 .btn-line{background:transparent;color:var(--ink);box-shadow:inset 0 0 0 1.5px var(--ink)}
 .btn-line:hover{background:var(--sand)}
 :focus-visible{outline:3px solid var(--sun);outline-offset:3px}
 
-/* top */
-.top{position:sticky;top:0;z-index:20;background:rgba(255,253,249,.94);backdrop-filter:blur(6px);border-bottom:1px solid var(--line)}
-.top .wrap{display:flex;justify-content:space-between;align-items:center;gap:12px;padding-block:12px}
+/* section header: same pattern everywhere */
+.sh{display:grid;gap:10px;margin-bottom:34px;max-width:760px}
+.sh .num{display:flex;align-items:center;gap:10px;font-weight:800;font-size:.8rem;letter-spacing:.12em;text-transform:uppercase;color:var(--sun-d)}
+.sh .num i{font-style:normal;display:grid;place-items:center;width:28px;height:28px;border-radius:50%;background:var(--sun);color:#fff;letter-spacing:0}
+
+/* header + section nav */
+.top{position:sticky;top:0;z-index:30;background:rgba(255,253,249,.96);backdrop-filter:blur(6px);border-bottom:1px solid var(--line)}
+.top-row{display:flex;justify-content:space-between;align-items:center;gap:12px;padding-block:10px}
 .brand{font:400 1.2rem var(--fd)} .brand b{color:var(--teal);font-weight:400}
-.top .btn{padding:10px 18px;font-size:.9rem}
+.top .btn{padding:9px 18px;font-size:.9rem}
+.nav{display:flex;gap:4px;overflow-x:auto;padding-bottom:8px;scrollbar-width:none}
+.nav::-webkit-scrollbar{display:none}
+.nav a{flex:none;font-weight:700;font-size:.86rem;color:var(--soft);text-decoration:none;padding:6px 12px;border-radius:999px}
+.nav a:hover,.nav a.on{background:var(--sand);color:var(--ink)}
 
-/* hero */
-.hero{padding-block:44px 30px}
+/* 1. hero */
+.hero{padding-block:48px 56px}
 .hero-grid{display:grid;gap:36px;align-items:center}
-@media(min-width:940px){.hero-grid{grid-template-columns:1fr 1.05fr;gap:48px}}
-.hero .note{display:block;margin-bottom:6px}
-.question{font:400 clamp(2rem,5.2vw,3.3rem)/1.12 var(--fd)}
-.question em{font-style:normal;background:linear-gradient(transparent 62%,rgba(227,155,45,.38) 62%)}
-.byline{display:flex;align-items:center;gap:14px;margin-top:26px;padding-top:20px;border-top:1px solid var(--line)}
-.byline img{width:56px;height:56px;border-radius:50%;object-fit:cover;object-position:50% 25%}
-.byline b{display:block;font:400 1.3rem var(--fd)} .byline span{color:var(--soft);font-size:.94rem}
-.hero p.lead{margin-top:18px}
+@media(min-width:940px){.hero-grid{grid-template-columns:1.05fr .95fr;gap:52px}}
+.tag{display:inline-block;font-weight:800;font-size:.8rem;letter-spacing:.1em;text-transform:uppercase;color:var(--teal);background:var(--teal-l);padding:6px 12px;border-radius:999px}
+.hero h1{font-size:clamp(2.8rem,7.5vw,4.6rem);margin-top:16px}
+.hero .subtitle{font:400 clamp(1.15rem,2.4vw,1.45rem)/1.35 var(--fd);color:var(--teal);margin-top:6px}
+.hero .lead{margin-top:18px}
+.facts{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:26px}
+.facts div{background:var(--sand);border-radius:14px;padding:12px 14px}
+.facts b{display:block;font:400 1.15rem var(--fd)} .facts span{font-size:.82rem;color:var(--soft)}
+@media(max-width:520px){.facts{grid-template-columns:1fr}}
 .ctas{display:flex;flex-wrap:wrap;gap:12px;margin-top:26px}
-.stack{position:relative;min-height:380px}
-.stack figure{position:absolute;background:#fff;padding:10px 10px 38px;box-shadow:0 12px 30px rgba(42,36,32,.16)}
-.stack img{width:100%;height:100%;object-fit:cover}
-.stack figcaption{position:absolute;left:0;right:0;bottom:6px;text-align:center;font:700 1.25rem var(--fh);color:var(--ink)}
-.s1{width:74%;height:68%;left:0;top:0;transform:rotate(-2.5deg);z-index:2}
-.s2{width:52%;height:50%;right:0;top:14%;transform:rotate(3deg)}
-.s3{width:50%;height:46%;right:6%;bottom:0;transform:rotate(-1.5deg);z-index:3}
-@media(max-width:600px){.stack{min-height:330px}.s1{width:82%}.s2{width:56%}.s3{width:58%}}
+.hero-pic{position:relative}
+.hero-pic img{width:100%;aspect-ratio:4/3.3;object-fit:cover;border-radius:24px}
+.hero-pic figcaption{position:absolute;left:16px;bottom:16px;background:rgba(255,253,249,.94);border-radius:12px;padding:8px 12px;font-size:.88rem}
+.hero-pic figcaption b{font:700 1.3rem var(--fh);color:var(--sun-d);display:block;line-height:1}
 
-/* clients strip */
-.strip{background:var(--sand);padding-block:18px}
-.strip .wrap{display:flex;flex-wrap:wrap;gap:8px 28px;align-items:baseline}
-.strip span{font-size:.85rem;color:var(--soft)} .strip b{font:400 1.2rem var(--fd)}
-
-/* why */
-.signs{display:grid;gap:28px}
-@media(min-width:900px){.signs{grid-template-columns:.9fr 1.1fr;gap:56px;align-items:start}}
-.signs ul{list-style:none;padding:0;display:grid;gap:12px}
-.signs li{background:var(--sand);border-radius:14px;padding:16px 18px 16px 52px;position:relative}
-.signs li::before{content:"";position:absolute;left:18px;top:21px;width:16px;height:16px;border-radius:50%;border:2px solid var(--sun)}
-.signs li b{font-weight:800}
-
-/* quote */
-.quote{background:var(--teal);color:#fff;padding-block:70px}
-.quote blockquote{font:400 clamp(1.5rem,3.6vw,2.3rem)/1.35 var(--fd);max-width:900px}
-.quote cite{display:block;margin-top:18px;font:700 1.5rem var(--fh);font-style:normal;color:#F4C77A}
-
-/* ideas as index cards */
-.cards{display:grid;gap:16px;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));margin-top:30px}
-.card{background:#fff;border:1px solid var(--line);border-radius:6px;padding:20px 20px 18px;position:relative;box-shadow:0 2px 0 var(--line);background-image:repeating-linear-gradient(transparent 0 31px,#F0E7DB 31px 32px);background-position:0 54px}
-.card:nth-child(3n+1){transform:rotate(-.6deg)} .card:nth-child(3n+2){transform:rotate(.5deg)}
-.card h3{font-size:1.25rem;color:var(--teal);margin-bottom:8px}
-.card p{color:var(--soft);font-size:.96rem;line-height:2rem}
-
-/* days */
-.days{display:grid;gap:22px;margin-top:30px}
-@media(min-width:880px){.days{grid-template-columns:1fr 1fr}}
-.day{background:var(--sand);border-radius:20px;padding:26px}
-.day .note{margin-bottom:4px}
-.day h3{font-size:1.6rem;margin-bottom:12px}
-.day ol{padding:0;list-style:none;counter-reset:m}
-.day ol[start="5"]{counter-reset:m 4}
-.day ol>li{counter-increment:m;padding:12px 0 12px 44px;border-top:1px solid var(--line);position:relative}
-.day ol>li::before{content:counter(m);position:absolute;left:0;top:12px;width:30px;height:30px;border-radius:50%;background:var(--teal);color:#fff;display:grid;place-items:center;font-weight:800;font-size:.9rem}
-.day summary b{display:block} .day summary span{display:block;color:var(--soft);font-size:.92rem}
-.frontline{margin-top:22px;display:grid;gap:18px;align-items:center;background:#fff;border:2px dashed var(--sun);border-radius:20px;padding:22px}
-@media(min-width:760px){.frontline{grid-template-columns:auto 1fr}}
-.frontline img{width:100%;max-width:280px;aspect-ratio:4/3;object-fit:cover;border-radius:12px}
-.frontline h3{font-size:1.4rem;margin-bottom:6px}
-
-
-.hint{color:var(--soft);font-size:.92rem;margin-top:6px}
-.day ol>li{padding:0 0 0 44px}
-.day ol>li::before{top:14px}
-.day details summary{display:block;font:inherit;list-style:none;cursor:pointer;padding:12px 30px 12px 0;position:relative}
-.day details summary::-webkit-details-marker,.gmod summary::-webkit-details-marker{display:none}
-.day details summary::after,.gmod summary::after{content:"+";position:absolute;right:2px;top:12px;width:24px;height:24px;border-radius:50%;background:#fff;color:var(--teal);display:grid;place-items:center;font-weight:800;transition:transform .2s}
-.day details[open] summary::after,.gmod[open] summary::after{content:"–";background:var(--teal);color:#fff}
-.day details summary:hover b{color:var(--teal)}
-.pts{margin:2px 0 14px;padding:12px 16px 12px 30px;background:#fff;border-radius:12px;display:grid;gap:6px;font-size:.95rem}
-.pts li{padding:0!important;border:0!important}
-.pts li::before{display:none}
-.pts li::marker{color:var(--sun)}
-.outcomes{margin-top:22px;background:var(--teal-l);border-radius:20px;padding:22px 24px}
-.outcomes ul{list-style:none;padding:0;margin-top:10px;display:flex;flex-wrap:wrap;gap:8px}
-.outcomes li{background:#fff;border-radius:999px;padding:7px 14px;font-weight:600;font-size:.92rem}
-.gmod{border-top:1px solid var(--line);margin-top:8px}
-.gmod summary{display:block;font:700 1rem var(--fb);list-style:none;cursor:pointer;padding:10px 30px 4px 0;position:relative}
-.gmod summary::after{top:8px}
-.gmod .pts{background:var(--sand)}
-
-
-.strip{padding-block:20px 22px}
-.strip .wrap{margin-bottom:12px}
+/* logos */
+.strip{background:var(--sand);padding-block:20px}
+.strip p{font-weight:700;font-size:.8rem;letter-spacing:.1em;text-transform:uppercase;color:var(--soft);margin-bottom:12px}
 .marquee{overflow:hidden;mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent)}
 .track{display:flex;width:max-content;gap:44px;align-items:center;animation:slide 60s linear infinite}
 .dup{display:flex;gap:44px;align-items:center}
 .marquee:hover .track{animation-play-state:paused}
-.track img{height:46px;width:auto;max-width:150px;object-fit:contain;mix-blend-mode:multiply;filter:grayscale(1) contrast(1.1);opacity:.75;transition:filter .25s,opacity .25s}
+.track img{height:44px;width:auto;max-width:150px;object-fit:contain;mix-blend-mode:multiply;filter:grayscale(1) contrast(1.1);opacity:.75;transition:filter .25s,opacity .25s}
 .track img:hover{filter:none;opacity:1}
 @keyframes slide{to{transform:translateX(-50%)}}
-.chip{font:600 .95rem var(--fb);background:#fff;border:1.5px solid var(--line);border-radius:999px;padding:9px 16px;cursor:pointer;color:var(--ink);transition:.15s}
+
+/* 2. challenges */
+.ch-grid{display:grid;gap:14px}
+@media(min-width:700px){.ch-grid{grid-template-columns:repeat(2,1fr)}}
+@media(min-width:1000px){.ch-grid{grid-template-columns:repeat(3,1fr)}}
+.ch{background:#fff;border:1px solid var(--line);border-radius:18px;padding:22px;display:grid;gap:10px;align-content:start}
+.ch .pb{font-weight:800;font-size:.76rem;letter-spacing:.1em;text-transform:uppercase;color:#B2533E}
+.ch h3{font-size:1.2rem}
+.ch .fix{border-top:1px dashed var(--line);padding-top:10px;font-size:.94rem;color:var(--soft)}
+.ch .fix b{color:var(--teal)}
+
+/* 3. program */
+.program{background:var(--sand)}
+.hint{color:var(--soft);font-size:.92rem;margin:-18px 0 18px}
+.days{display:grid;gap:18px}
+@media(min-width:880px){.days{grid-template-columns:1fr 1fr}}
+.day{background:#fff;border-radius:20px;padding:24px}
+.day-h{display:flex;align-items:baseline;gap:12px;padding-bottom:12px;border-bottom:2px solid var(--teal)}
+.day-h span{font-weight:800;font-size:.8rem;letter-spacing:.1em;text-transform:uppercase;color:var(--sun-d)}
+.day-h h3{font-size:1.45rem}
+.day ol{padding:0;list-style:none;counter-reset:m}
+.day ol[start="5"]{counter-reset:m 4}
+.day ol>li{counter-increment:m;border-bottom:1px solid var(--line);position:relative;padding-left:44px}
+.day ol>li::before{content:counter(m);position:absolute;left:0;top:14px;width:30px;height:30px;border-radius:50%;background:var(--teal);color:#fff;display:grid;place-items:center;font-weight:800;font-size:.9rem}
+.day summary{display:block;list-style:none;cursor:pointer;padding:12px 32px 12px 0;position:relative}
+.day summary::-webkit-details-marker,.gmod summary::-webkit-details-marker,.faq summary::-webkit-details-marker{display:none}
+.day summary b{display:block}.day summary span{display:block;color:var(--soft);font-size:.92rem}
+.day summary::after,.gmod summary::after{content:"+";position:absolute;right:0;top:14px;width:24px;height:24px;border-radius:50%;background:var(--sand);color:var(--teal);display:grid;place-items:center;font-weight:800}
+.day details[open] summary::after,.gmod[open] summary::after{content:"–";background:var(--teal);color:#fff}
+.day summary:hover b{color:var(--teal)}
+.pts{margin:0 0 14px;padding:12px 16px 12px 30px;background:var(--sand);border-radius:12px;display:grid;gap:5px;font-size:.95rem}
+.pts li::marker{color:var(--sun)}
+.outcomes{margin-top:18px;background:var(--teal);color:#fff;border-radius:20px;padding:24px}
+.outcomes h3{font-size:1.3rem}
+.outcomes ul{list-style:none;padding:0;margin-top:14px;display:grid;gap:10px}
+@media(min-width:700px){.outcomes ul{grid-template-columns:repeat(2,1fr)}}
+.outcomes li{display:flex;gap:10px;align-items:flex-start}
+.outcomes li::before{content:"✓";flex:none;width:22px;height:22px;border-radius:50%;background:var(--sun);color:#fff;display:grid;place-items:center;font-weight:800;font-size:.75rem;margin-top:3px}
+
+/* 4. formats */
+.formats{display:grid;gap:16px}
+@media(min-width:860px){.formats{grid-template-columns:1fr 1fr}}
+.fmt{border:1px solid var(--line);border-radius:20px;padding:24px;display:grid;gap:10px;align-content:start;background:#fff}
+.fmt.main{border:2px solid var(--teal)}
+.fmt .len{display:inline-block;justify-self:start;font-weight:800;font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;background:var(--teal);color:#fff;padding:5px 10px;border-radius:999px}
+.fmt.alt .len{background:var(--sun)}
+.fmt h3{font-size:1.45rem}
+.fmt dl{display:grid;grid-template-columns:auto 1fr;gap:6px 14px;margin:6px 0 0;font-size:.95rem}
+.fmt dt{font-weight:800;color:var(--soft)} .fmt dd{margin:0}
+.gmod{border-top:1px solid var(--line)}
+.gmod summary{display:block;list-style:none;cursor:pointer;padding:12px 32px 12px 0;position:relative;font-weight:700}
+
+/* 5. approach */
+.approach{background:var(--sand)}
+.quote{background:var(--teal);color:#fff;border-radius:22px;padding:28px 30px}
+.quote blockquote{font:400 clamp(1.25rem,2.8vw,1.75rem)/1.4 var(--fd)}
+.quote cite{display:block;margin-top:12px;font:700 1.4rem var(--fh);font-style:normal;color:#F4C77A}
+.methods{display:flex;flex-wrap:wrap;gap:8px;margin-top:28px}
+.chip{font:700 .95rem var(--fb);background:#fff;border:1.5px solid var(--line);border-radius:999px;padding:9px 16px;cursor:pointer;color:var(--ink);transition:.15s}
 .chip:hover{border-color:var(--teal)}
 .chip[aria-pressed="true"]{background:var(--teal);border-color:var(--teal);color:#fff}
-.method-panel{margin-top:14px;display:grid;gap:16px;align-items:center;background:#fff;border-radius:18px;padding:16px;max-width:820px}
-@media(min-width:640px){.method-panel{grid-template-columns:200px 1fr}}
+.method-panel{margin-top:14px;display:grid;gap:16px;align-items:center;background:#fff;border-radius:18px;padding:16px}
+@media(min-width:640px){.method-panel{grid-template-columns:220px 1fr}}
 .method-panel img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:12px}
 .method-panel b{display:block;font:400 1.3rem var(--fd);margin-bottom:4px}
 .method-panel p{color:var(--soft)}
-.zoom{all:unset;display:block;cursor:zoom-in;width:100%}
+
+/* 6. results */
+.gallery{display:grid;gap:12px;grid-template-columns:repeat(2,1fr)}
+@media(min-width:900px){.gallery{grid-template-columns:repeat(4,1fr)}}
+.gallery figure{display:grid;gap:6px}
+.zoom{all:unset;display:block;cursor:zoom-in;border-radius:14px;overflow:hidden}
 .zoom:focus-visible{outline:3px solid var(--sun);outline-offset:3px}
-.zoom img{transition:transform .3s}.zoom:hover img{transform:scale(1.03)}
-.lightbox{position:fixed;inset:0;z-index:60;background:rgba(30,25,22,.88);display:grid;place-items:center;padding:24px}
-.lightbox figure{background:#fff;padding:12px 12px 14px;max-width:min(1000px,100%)}
-.lightbox img{max-height:78vh;width:auto;margin:auto}
-.lightbox figcaption{font:700 1.5rem var(--fh);text-align:center;margin-top:8px}
-.lb-close{position:absolute;top:calc(14px + env(safe-area-inset-top,0px));right:calc(16px + env(safe-area-inset-right,0px));width:44px;height:44px;border-radius:50%;border:0;background:#fff;font-size:1.5rem;cursor:pointer}
-.card.has-pic{padding-right:96px}
-.card-pic{position:absolute;right:14px;top:14px;width:72px;transform:rotate(8deg)}
+.zoom img{width:100%;aspect-ratio:4/3;object-fit:cover;transition:transform .3s}
+.zoom:hover img{transform:scale(1.04)}
+.gallery figcaption{font-size:.88rem;color:var(--soft)}
+.videos{display:grid;gap:16px;margin-top:28px}
+@media(min-width:860px){.videos{grid-template-columns:repeat(3,1fr)}}
+.vcard{background:#fff;border:1px solid var(--line);border-radius:18px;padding:10px;display:grid;gap:10px;align-content:start}
+.vcard video{width:100%;aspect-ratio:9/16;object-fit:cover;border-radius:12px;background:var(--ink);max-height:520px}
+.vcard p{padding:0 6px 4px;font-size:.92rem;color:var(--soft)} .vcard b{display:block;color:var(--ink);font-size:1rem}
+.vcard.feature{border:2px solid var(--teal)}
+.vcard .label{display:inline-block;margin:0 6px;font-weight:800;font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;color:#fff;background:var(--sun);padding:4px 9px;border-radius:999px;justify-self:start}
 
-
-.voice{background:var(--teal);color:#fff}
-.voice-grid{display:grid;gap:30px;align-items:center}
-@media(min-width:820px){.voice-grid{grid-template-columns:auto 1fr;gap:54px}}
-.voice-vid{background:#fff;padding:10px;transform:rotate(-1.5deg);width:min(320px,100%);justify-self:center;box-shadow:0 14px 30px rgba(0,0,0,.25)}
-.voice-vid video{width:100%;aspect-ratio:9/16;object-fit:cover;background:#000}
-.voice .note{color:#F4C77A}.voice .lead{color:#CFE3E1}
-.who{margin-top:22px;padding-left:16px;border-left:3px solid var(--sun)}
-.who b{display:block;font:400 1.4rem var(--fd)}.who span{color:#CFE3E1}
-
-/* room */
-.room{background:var(--sand)}
-.wall{display:grid;gap:14px;grid-template-columns:repeat(2,1fr);margin-top:30px}
-@media(min-width:900px){.wall{grid-template-columns:repeat(3,1fr)}}
-.wall figure{background:#fff;padding:8px 8px 10px;box-shadow:0 6px 18px rgba(42,36,32,.1)}
-.wall figure:nth-child(odd){transform:rotate(-.8deg)} .wall figure:nth-child(even){transform:rotate(.7deg)}
-.wall img,.wall video{width:100%;aspect-ratio:4/3;object-fit:cover;background:var(--ink)}
-.wall video{aspect-ratio:9/16}
-.wall figcaption{font:700 1.2rem/1.2 var(--fh);margin-top:8px;padding-inline:4px}
-.wall .tall{grid-row:span 2}
-.methods{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px}
-.methods span{background:#fff;border:1px solid var(--line);border-radius:999px;padding:7px 14px;font-weight:600;font-size:.92rem}
-
-/* trainer */
+/* 7. trainer */
+.trainer{background:var(--sand)}
 .trainer-grid{display:grid;gap:30px;align-items:center}
-@media(min-width:860px){.trainer-grid{grid-template-columns:.85fr 1.15fr;gap:54px}}
+@media(min-width:860px){.trainer-grid{grid-template-columns:.8fr 1.2fr;gap:54px}}
 .trainer-grid img{width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:24px}
-.facts{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:22px}
-@media(min-width:600px){.facts{grid-template-columns:repeat(4,1fr)}}
-.facts b{display:block;font:400 1.9rem/1 var(--fd);color:var(--teal)} .facts span{font-size:.86rem;color:var(--soft)}
+.stats{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:22px}
+@media(min-width:600px){.stats{grid-template-columns:repeat(4,1fr)}}
+.stats div{background:#fff;border-radius:14px;padding:12px 14px}
+.stats b{display:block;font:400 1.6rem/1 var(--fd);color:var(--teal)} .stats span{font-size:.84rem;color:var(--soft)}
 
-/* fit + faq */
-.fit{display:grid;gap:16px;margin-top:26px}
-@media(min-width:760px){.fit{grid-template-columns:1.3fr 1fr}}
-.fit>div{border-radius:18px;padding:24px}
-.fit .yes{background:var(--teal-l)} .fit .no{background:var(--sand)}
-.fit h3{font-size:1.3rem;margin-bottom:10px}
-.fit ul{padding-left:20px;display:grid;gap:6px}
-details{border-bottom:1px solid var(--line);padding:16px 0}
-summary{cursor:pointer;list-style:none;display:flex;justify-content:space-between;gap:12px;font:400 1.2rem var(--fd)}
-summary::after{content:"+";color:var(--sun-d);font-family:var(--fb);font-weight:800}
-details[open] summary::after{content:"–"}
-details p{color:var(--soft);margin-top:8px;max-width:65ch}
-
-/* plan */
-.plan{background:var(--ink);color:#fff}
-.plan-grid{display:grid;gap:30px;align-items:center}
-@media(min-width:880px){.plan-grid{grid-template-columns:1fr 1fr}}
-.plan .lead{color:#CFC4BA}
-.plan .note{color:#F4C77A}
-.slot{background:var(--paper);color:var(--ink);border-radius:20px;padding:28px;display:grid;gap:10px}
+/* 8. faq + contact */
+.faq details{border-bottom:1px solid var(--line);padding:16px 0}
+.faq summary{cursor:pointer;list-style:none;display:flex;justify-content:space-between;gap:12px;font:400 1.15rem var(--fd)}
+.faq summary::after{content:"+";color:var(--sun-d);font:800 1.1rem var(--fb)}
+.faq details[open] summary::after{content:"–"}
+.faq details p{color:var(--soft);margin-top:8px;max-width:65ch}
+.contact{background:var(--ink);color:#fff}
+.contact .sh .num{color:#F4C77A}
+.contact .lead{color:#CFC4BA}
+.contact-grid{display:grid;gap:30px;align-items:center}
+@media(min-width:880px){.contact-grid{grid-template-columns:1fr 1fr}}
+.slot{background:var(--paper);color:var(--ink);border-radius:20px;padding:26px;display:grid;gap:10px}
 .slot p{color:var(--soft)} .slot .btn{justify-self:start;margin-top:6px}
-footer{padding-block:26px;background:#1E1916;color:#A89C92;font-size:.9rem}
-@media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+footer{padding-block:24px;background:#1E1916;color:#A89C92;font-size:.9rem}
+
+.lightbox{position:fixed;inset:0;z-index:60;background:rgba(30,25,22,.9);display:grid;place-items:center;padding:24px}
+.lightbox figure{background:#fff;padding:10px 10px 12px;border-radius:10px;max-width:min(1000px,100%)}
+.lightbox img{max-height:78vh;width:auto;margin:auto;border-radius:6px}
+.lightbox figcaption{text-align:center;margin-top:8px;font-weight:700}
+.lb-close{position:absolute;top:calc(14px + env(safe-area-inset-top,0px));right:calc(16px + env(safe-area-inset-right,0px));width:44px;height:44px;border-radius:50%;border:0;background:#fff;font-size:1.5rem;cursor:pointer}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important;scroll-behavior:auto!important}}
 </style>
 </head>
 <body>
-<header class="top"><div class="wrap"><span class="brand">The Missing <b>P</b></span><a class="btn" href="#plan">Plan for your team</a></div></header>
+<header class="top">
+  <div class="wrap top-row"><span class="brand">The Missing <b>P</b></span><a class="btn" href="#contact">Book a call</a></div>
+  <nav class="wrap nav" aria-label="Page sections">
+    <a href="#about">The program</a><a href="#challenges">Challenges</a><a href="#program">Two days</a><a href="#formats">Formats</a><a href="#approach">Approach</a><a href="#results">Results</a><a href="#trainer">Trainer</a><a href="#contact">Contact</a>
+  </nav>
+</header>
 
 <main>
-  <section class="hero">
+  <!-- 1. WHAT IT IS -->
+  <section class="hero" id="about">
     <div class="wrap hero-grid">
       <div>
-        <span class="note">Reinvent Yourself · a two-day workshop</span>
-        <p class="question">"If our potential is unlimited, why is our life <em>so limited?</em>"</p>
-        <p class="lead">Two days on personal leadership and effective management. Your team learns to embrace change, manage expectations, inspire others and drive results, and to stop turning stress into anxiety.</p>
-        <div class="ctas"><a class="btn" href="#plan">Bring it to your team →</a><a class="btn btn-line" href="#days">See the two days</a></div>
-        <div class="byline"><img src="img/usman-open-arms.jpg" alt=""><div><b>Usman Gulzari</b><span>Lead Trainer, The Missing P · 14 years · 2,000+ trainings</span></div></div>
+        <span class="tag">Corporate workshop by The Missing P</span>
+        <h1>Reinvent Yourself</h1>
+        <p class="subtitle">Personal Leadership &amp; Effective Management</p>
+        <p class="lead">A two-day workshop that gives your people the mindset and skill set to handle workplace challenges. Participants learn to take ownership, align their work with organisational goals, manage expectations, work through conflict and lead with purpose.</p>
+        <div class="facts">
+          <div><b>2 days</b><span>8 practical modules</span></div>
+          <div><b>Who it's for</b><span>Officers, supervisors, managers</span></div>
+          <div><b>Delivered</b><span>On-site, anywhere in Pakistan</span></div>
+        </div>
+        <div class="ctas"><a class="btn" href="#contact">Plan it for your team →</a><a class="btn btn-line" href="#program">See the two days</a></div>
       </div>
-      <div class="stack" aria-label="Photos from recent workshops">
-        <figure class="s1"><img src="img/group-certs.jpg" alt="Participants celebrating with their certificates"><figcaption>Day two, certificates in hand</figcaption></figure>
-        <figure class="s2"><img src="img/helium-up.jpg" alt="Team doing the helium stick challenge"><figcaption>The helium stick</figcaption></figure>
-        <figure class="s3"><img src="img/sticky-notes.jpg" alt="Participants working with sticky notes"><figcaption>Gripes into goals</figcaption></figure>
-      </div>
+      <figure class="hero-pic">
+        <img src="img/group-certs.jpg" alt="Workshop participants celebrating at the end of the program">
+        <figcaption><b>Day two</b>Certificates in hand</figcaption>
+      </figure>
     </div>
   </section>
 
-  <div class="strip"><div class="wrap"><span>Teams we've worked with</span></div><div class="marquee"><div class="track"><img src="logos/lci.png" alt="LCI" title="LCI"><img src="logos/suzuki.png" alt="Suzuki" title="Suzuki"><img src="logos/fatima.png" alt="Fatima Group" title="Fatima Group"><img src="logos/engro.png" alt="Engro" title="Engro"><img src="logos/hbl.png" alt="HBL" title="HBL"><img src="logos/ubl.png" alt="UBL" title="UBL"><img src="logos/meezan.png" alt="Meezan Bank" title="Meezan Bank"><img src="logos/telenor.png" alt="Telenor" title="Telenor"><img src="logos/jazz.png" alt="Jazz" title="Jazz"><img src="logos/national-foods.png" alt="National Foods" title="National Foods"><img src="logos/shan.png" alt="Shan Foods" title="Shan Foods"><img src="logos/ke.png" alt="K-Electric" title="K-Electric"><img src="logos/hubco.png" alt="HUBCO" title="HUBCO"><img src="logos/hino.png" alt="Hino" title="Hino"><img src="logos/attock.png" alt="Attock" title="Attock"><img src="logos/millat.png" alt="Millat Tractors" title="Millat Tractors"><img src="logos/descon.png" alt="Descon" title="Descon"><img src="logos/national-engineers.png" alt="National Engineers" title="National Engineers"><span class="dup" aria-hidden="true"><img src="logos/lci.png" alt="LCI" title="LCI"><img src="logos/suzuki.png" alt="Suzuki" title="Suzuki"><img src="logos/fatima.png" alt="Fatima Group" title="Fatima Group"><img src="logos/engro.png" alt="Engro" title="Engro"><img src="logos/hbl.png" alt="HBL" title="HBL"><img src="logos/ubl.png" alt="UBL" title="UBL"><img src="logos/meezan.png" alt="Meezan Bank" title="Meezan Bank"><img src="logos/telenor.png" alt="Telenor" title="Telenor"><img src="logos/jazz.png" alt="Jazz" title="Jazz"><img src="logos/national-foods.png" alt="National Foods" title="National Foods"><img src="logos/shan.png" alt="Shan Foods" title="Shan Foods"><img src="logos/ke.png" alt="K-Electric" title="K-Electric"><img src="logos/hubco.png" alt="HUBCO" title="HUBCO"><img src="logos/hino.png" alt="Hino" title="Hino"><img src="logos/attock.png" alt="Attock" title="Attock"><img src="logos/millat.png" alt="Millat Tractors" title="Millat Tractors"><img src="logos/descon.png" alt="Descon" title="Descon"><img src="logos/national-engineers.png" alt="National Engineers" title="National Engineers"></span></div></div></div>
+  <div class="strip">
+    <div class="wrap"><p>Teams we've worked with</p></div>
+    <div class="marquee"><div class="track">
+      <img src="logos/lci.png" alt="LCI"><img src="logos/suzuki.png" alt="Suzuki"><img src="logos/fatima.png" alt="Fatima Group"><img src="logos/engro.png" alt="Engro"><img src="logos/hbl.png" alt="HBL"><img src="logos/ubl.png" alt="UBL"><img src="logos/meezan.png" alt="Meezan Bank"><img src="logos/telenor.png" alt="Telenor"><img src="logos/jazz.png" alt="Jazz"><img src="logos/national-foods.png" alt="National Foods"><img src="logos/shan.png" alt="Shan Foods"><img src="logos/ke.png" alt="K-Electric"><img src="logos/hubco.png" alt="HUBCO"><img src="logos/hino.png" alt="Hino"><img src="logos/attock.png" alt="Attock"><img src="logos/millat.png" alt="Millat Tractors"><img src="logos/descon.png" alt="Descon"><img src="logos/national-engineers.png" alt="National Engineers">
+      <span class="dup" aria-hidden="true"><img src="logos/lci.png" alt=""><img src="logos/suzuki.png" alt=""><img src="logos/fatima.png" alt=""><img src="logos/engro.png" alt=""><img src="logos/hbl.png" alt=""><img src="logos/ubl.png" alt=""><img src="logos/meezan.png" alt=""><img src="logos/telenor.png" alt=""><img src="logos/jazz.png" alt=""><img src="logos/national-foods.png" alt=""><img src="logos/shan.png" alt=""><img src="logos/ke.png" alt=""><img src="logos/hubco.png" alt=""><img src="logos/hino.png" alt=""><img src="logos/attock.png" alt=""><img src="logos/millat.png" alt=""><img src="logos/descon.png" alt=""><img src="logos/national-engineers.png" alt=""></span>
+    </div></div>
+  </div>
 
-  <section>
-    <div class="wrap signs">
-      <div>
-        <span class="note">Why teams call us</span>
-        <h2>Most teams don't lack talent. They lack the mindset to use it.</h2>
-        <p class="lead">These are the patterns Sir Usman sees in almost every organisation before a workshop.</p>
-      </div>
-      <ul>
-        <li>People are <b>driven by compliance, not commitment</b>.</li>
-        <li>Stress turns into <b>anxiety and complaints</b> instead of action.</li>
-        <li>Energy goes into <b>gripes, not goals</b>.</li>
-        <li>Everyone is busy, but efforts are <b>not aligned with organisational goals</b>.</li>
-        <li>Conversations with managers are <b>avoided or go wrong</b>.</li>
-        <li>In conflicts, people fight over <b>positions instead of interests</b>.</li>
-      </ul>
-    </div>
-  </section>
-
-  <section class="quote">
+  <!-- 2. CHALLENGES -->
+  <section id="challenges">
     <div class="wrap">
-      <blockquote>"Learning cannot be enforced. Our job is to create an environment where participants choose to learn, grow and commit to transform themselves."</blockquote>
-      <cite>Usman Gulzari</cite>
-    </div>
-  </section>
-
-  <section>
-    <div class="wrap">
-      <span class="note">Ideas your team will still be using months later</span>
-      <h2>Simple tools people actually remember</h2>
-      <div class="cards">
-        <article class="card"><h3>Walk away from 97%</h3><p>Why we settle for mediocrity, and how to stop.</p></article>
-        <article class="card has-pic"><img class="card-pic" src="img/chashma.png" alt=""><h3>Chashma</h3><p>Change the way you look at things, and the things you look at change.</p></article>
-        <article class="card"><h3>E + R = O</h3><p>Event + Response = Outcome. We can't control the event, only our response.</p></article>
-        <article class="card"><h3>100% Responsibility = 0 Blame</h3><p>Owning the result, every single time.</p></article>
-        <article class="card"><h3>Eat that Frog</h3><p>Do the hardest, most important task first.</p></article>
-        <article class="card"><h3>People are different, not difficult</h3><p>Difference isn't equal to wrong.</p></article>
-        <article class="card"><h3>Push or inspire</h3><p>The two ways to bring change, and why one lasts.</p></article>
-        <article class="card"><h3>The 12-second rule</h3><p>React vs respond: the pause that saves relationships.</p></article>
+      <div class="sh"><span class="num"><i>1</i>The challenges it solves</span><h2>Six problems we see in most teams, and what changes</h2></div>
+      <div class="ch-grid">
+        <article class="ch"><span class="pb">Challenge</span><h3>Blame instead of ownership</h3><p class="fix"><b>After:</b> people take 100% responsibility for results and focus on what they can control.</p></article>
+        <article class="ch"><span class="pb">Challenge</span><h3>Stress turning into anxiety</h3><p class="fix"><b>After:</b> complaints become goals, and pressure is handled with a calmer, growth mindset.</p></article>
+        <article class="ch"><span class="pb">Challenge</span><h3>Busy, but not productive</h3><p class="fix"><b>After:</b> work is prioritised and aligned with organisational goals, so the important things get done.</p></article>
+        <article class="ch"><span class="pb">Challenge</span><h3>Poor communication</h3><p class="fix"><b>After:</b> people listen to understand and communicate in a way that builds trust.</p></article>
+        <article class="ch"><span class="pb">Challenge</span><h3>Difficulty managing upwards</h3><p class="fix"><b>After:</b> staff manage expectations, show their work and influence without authority.</p></article>
+        <article class="ch"><span class="pb">Challenge</span><h3>Conflict that turns personal</h3><p class="fix"><b>After:</b> disagreements are handled calmly, with common ground found on interests, not positions.</p></article>
       </div>
     </div>
   </section>
 
-  <section id="days" style="padding-top:0">
+  <!-- 3. PROGRAM -->
+  <section class="program" id="program">
     <div class="wrap">
-      <span class="note">The two days</span>
-      <h2>Day 1 is about leading yourself. Day 2 is about working with others.</h2>
+      <div class="sh"><span class="num"><i>2</i>The program</span><h2>Day 1: lead yourself. Day 2: work with others.</h2></div>
       <p class="hint">Tap any module to see what's covered.</p>
       <div class="days">
         <div class="day">
-          <span class="note">Day 1</span><h3>Personal Leadership</h3>
-          <ol><li><details><summary><b>Personal Leadership</b><span>The ladder of learning, the Johari window, the Rider and the Elephant</span></summary><ul class="pts"><li>Walk away from 97%</li><li>If our potential is unlimited, why is our life so limited?</li><li>The Ladder of Learning &amp; the Johari Window: two tools for self-awareness</li><li>The difference between motivation and inspiration</li><li>Are we driven by compliance or commitment?</li><li>The Rider &amp; the Elephant: why we lean towards mediocrity, and what to do about it</li></ul></details></li><li><details><summary><b>Embracing the Mindset</b><span>Facts vs beliefs, fixed vs growth mindset, mental agility</span></summary><ul class="pts"><li>Mental agility and the growth mindset</li><li>Change the way you look at things, the things you look at change</li><li>Facts vs beliefs: the power of interpretation</li><li>Fixed mindset vs growth mindset (practical)</li><li>Mental agility: quickness to respond</li></ul></details></li><li><details><summary><b>The Golden Triangle</b><span>Turning gripes into goals</span></summary><ul class="pts"><li><b>Chashma</b>: change the way you look at things, the things you look at change</li><li>Outcome = Event + Response</li><li><b>100% Responsibility = 0 Blame</b></li><li>Focusing on controllables</li><li>Group activity: the ball passing challenge</li></ul></details></li><li><details><summary><b>Getting Things Done</b><span>Strategic and tactical tools for time and priorities</span></summary><ul class="pts"><li>Aligning our efforts with organisational goals</li><li>Strategic vs tactical</li><li>Time management in a nutshell</li><li>Strategic ideas: the Eisenhower Matrix and the Pareto Principle</li><li>Tactical ideas: Eat that Frog, Kanban, Time Blocking</li><li>Activity: Efficiency + Effectiveness = Productivity</li><li>The four steps of monkey management</li></ul></details></li></ol>
+          <div class="day-h"><span>Day 1</span><h3>Personal Leadership</h3></div>
+          <ol>
+            <li><details><summary><b>Personal Leadership</b><span>Self-awareness, commitment and moving away from mediocrity</span></summary><ul class="pts"><li>Walk away from 97%</li><li>If our potential is unlimited, why is our life so limited?</li><li>The Ladder of Learning &amp; the Johari Window</li><li>Motivation vs inspiration</li><li>Are we driven by compliance or commitment?</li><li>The Rider &amp; the Elephant</li></ul></details></li>
+            <li><details><summary><b>Embracing the Mindset</b><span>Growth mindset and mental agility</span></summary><ul class="pts"><li>Change the way you look at things, the things you look at change</li><li>Facts vs beliefs: the power of interpretation</li><li>Fixed vs growth mindset (practical)</li><li>Mental agility: quickness to respond</li></ul></details></li>
+            <li><details><summary><b>Turning Gripes into Goals</b><span>Responsibility and focusing on controllables</span></summary><ul class="pts"><li>Chashma: a new way of seeing the situation</li><li>Outcome = Event + Response</li><li>100% responsibility = 0 blame</li><li>Focusing on controllables</li><li>Group activity: the ball passing challenge</li></ul></details></li>
+            <li><details><summary><b>Getting Things Done</b><span>Priorities, time and productivity</span></summary><ul class="pts"><li>Aligning efforts with organisational goals</li><li>Strategic vs tactical</li><li>Eisenhower Matrix and the Pareto Principle</li><li>Eat that Frog, Kanban, time blocking</li><li>Efficiency + effectiveness = productivity</li><li>The four steps of monkey management</li></ul></details></li>
+          </ol>
         </div>
         <div class="day">
-          <span class="note">Day 2</span><h3>Effective Management</h3>
-          <ol start="5"><li><details><summary><b>Communicate to Connect</b><span>Communicating like a pro to deal with people</span></summary><ul class="pts"><li>Role-plays of challenging situations</li><li>Pre-requisites of effective communication</li><li>Applying WIIFM: What's In It For Me</li><li>People are different, not difficult. Difference isn't equal to wrong</li><li>Reflective listening: listening that builds trust</li></ul></details></li><li><details><summary><b>Managing Upwards</b><span>Managing expectations and influencing without authority</span></summary><ul class="pts"><li>The art of influencing without authority</li><li>The five critical steps of upper management</li><li>Two ways to bring change: push or inspire</li><li>Three communication styles: aggressive, assertive, submissive</li><li>How to start a conversation with your manager</li><li>How to show your work</li><li>Role-play: a conversation with your manager</li></ul></details></li><li><details><summary><b>Conflict Management</b><span>Finding common ground in conflicting situations</span></summary><ul class="pts"><li>React vs respond</li><li>Anger management: the rule of 12 seconds</li><li>The Thomas-Kilmann conflict model, applied</li><li>Role-play: giving feedback that influences behaviour</li><li>Positions vs interests: the core of negotiation</li><li>Demonstration: a simple strategy to make others listen to you</li></ul></details></li><li><details><summary><b>Role-Plays</b><span>Practical application</span></summary><ul class="pts"><li>Real situations from your workplace, practised in the room</li><li>Feedback from Sir Usman and the group on every role-play</li></ul></details></li></ol>
+          <div class="day-h"><span>Day 2</span><h3>Effective Management</h3></div>
+          <ol start="5">
+            <li><details><summary><b>Communicate to Connect</b><span>Communication that builds trust</span></summary><ul class="pts"><li>Role-plays of challenging situations</li><li>Pre-requisites of effective communication</li><li>WIIFM: What's In It For Me</li><li>People are different, not difficult</li><li>Reflective listening</li></ul></details></li>
+            <li><details><summary><b>Managing Upwards</b><span>Expectations and influence without authority</span></summary><ul class="pts"><li>The art of influencing without authority</li><li>The five critical steps of upper management</li><li>Two ways to bring change: push or inspire</li><li>Aggressive, assertive and submissive styles</li><li>How to start a conversation with your manager and show your work</li><li>Role-play: a conversation with your manager</li></ul></details></li>
+            <li><details><summary><b>Conflict Management</b><span>Finding common ground</span></summary><ul class="pts"><li>React vs respond, and managing anger</li><li>The Thomas-Kilmann conflict model, applied</li><li>Role-play: feedback that influences behaviour</li><li>Positions vs interests: the core of negotiation</li><li>A simple strategy to make others listen</li></ul></details></li>
+            <li><details><summary><b>Role-Plays</b><span>Practical application</span></summary><ul class="pts"><li>Real situations from your workplace, practised in the room</li><li>Feedback from the facilitator and the group</li></ul></details></li>
+          </ol>
         </div>
       </div>
       <div class="outcomes">
-        <span class="note">By the end of the two days, your team will be</span>
+        <h3>By the end of the two days, participants will be</h3>
         <ul>
-          <li>Mastering personal leadership</li><li>Aligning their efforts with organisational goals</li><li>Embracing a victor mindset</li><li>Turning gripes (distress) into goals (eustress)</li><li>Getting things done with strategic &amp; tactical tools</li><li>Communicating like a pro</li><li>Finding common ground in conflict</li><li>Managing expectations &amp; managing upwards</li>
+          <li>Leading themselves with ownership and a victor mindset</li>
+          <li>Aligning their efforts with organisational goals</li>
+          <li>Turning stress and complaints into goals</li>
+          <li>Getting things done with strategic and tactical tools</li>
+          <li>Communicating clearly and confidently</li>
+          <li>Finding common ground in conflict</li>
+          <li>Managing expectations and managing upwards</li>
+          <li>Maximising their influence at work</li>
         </ul>
       </div>
-      <div class="frontline">
-        <img src="img/mountain-map.jpg" alt="Usman guiding a group exercise in the frontline program">
-        <div><span class="note">For frontline teams</span><h3>Gear Up for Excellence · one day</h3><p class="lead">The same ideas in a one-day format for frontline professionals, built on realistic workplace situations, role-plays and simulations.</p><details class="gmod"><summary><b>1. The Inner Game of Leadership</b></summary><ul class="pts"><li>Introduction &amp; ice-breaker</li><li>Chashma: change the way you look at things, the things you look at change</li><li>Facts vs stories: the power of interpretation</li><li>Managing overwhelm: focusing on controllables</li><li>Remote control: E + R = O</li><li>Activity: My Professional Avatar</li></ul></details><details class="gmod"><summary><b>2. Emotional Agility</b></summary><ul class="pts"><li>Facts vs beliefs: the power of interpretation</li><li>Fixed vs growth mindset (practical)</li><li>Mental agility: tools of adaptability</li><li>Tools to stay in the growth zone</li><li>Managing workplace frustrations and emotional triggers</li><li>Role-play: showing grace under fire</li></ul></details><details class="gmod"><summary><b>3. Communicate to Connect</b></summary><ul class="pts"><li>Role-plays: challenging workplace conversations</li><li>Pre-requisites of effective communication</li><li>WIIFM: What's In It For Me</li><li>Reflective listening: listening to understand</li><li>Assertive vs aggressive vs submissive</li><li>Role-play: addressing a team member who keeps coming late</li></ul></details><details class="gmod"><summary><b>4. The Art of Influencing</b></summary><ul class="pts"><li>The five critical steps of management</li><li>Two ways to bring change: push or inspire</li><li>Three communication styles</li><li>How to start a conversation with impact</li><li>Role-play: influencing without authority</li></ul></details></div>
+    </div>
+  </section>
+
+  <!-- 4. FORMATS -->
+  <section id="formats">
+    <div class="wrap">
+      <div class="sh"><span class="num"><i>3</i>Formats</span><h2>Choose the version that fits your team</h2></div>
+      <div class="formats">
+        <article class="fmt main">
+          <span class="len">2 days</span>
+          <h3>Reinvent Yourself</h3>
+          <p class="lead">The full program on personal leadership and effective management.</p>
+          <dl><dt>For</dt><dd>Officers, supervisors and managers</dd><dt>Modules</dt><dd>8 (see the two days above)</dd><dt>Includes</dt><dd>Workshop manual and certificates</dd></dl>
+        </article>
+        <article class="fmt alt">
+          <span class="len">1 day</span>
+          <h3>Gear Up for Excellence</h3>
+          <p class="lead">A frontline development program built on realistic workplace situations, role-plays and simulations.</p>
+          <dl><dt>For</dt><dd>Frontline professionals</dd><dt>Modules</dt><dd>4, listed below</dd><dt>Includes</dt><dd>Workshop manual and certificates</dd></dl>
+          <div>
+            <details class="gmod"><summary>1. The Inner Game of Leadership</summary><ul class="pts"><li>Ice-breaker and introduction</li><li>Facts vs stories: the power of interpretation</li><li>Managing overwhelm: focusing on controllables</li><li>Event + Response = Outcome</li><li>Activity: My Professional Avatar</li></ul></details>
+            <details class="gmod"><summary>2. Emotional Agility</summary><ul class="pts"><li>Fixed vs growth mindset (practical)</li><li>Tools of adaptability and staying in the growth zone</li><li>Managing workplace frustrations and emotional triggers</li><li>Role-play: showing grace under fire</li></ul></details>
+            <details class="gmod"><summary>3. Communicate to Connect</summary><ul class="pts"><li>Role-plays: challenging workplace conversations</li><li>Reflective listening: listening to understand</li><li>Assertive vs aggressive vs submissive</li><li>Role-play: a team member who keeps coming late</li></ul></details>
+            <details class="gmod"><summary>4. The Art of Influencing</summary><ul class="pts"><li>Two ways to bring change: push or inspire</li><li>How to start a conversation with impact</li><li>Role-play: influencing without authority</li></ul></details>
+          </div>
+        </article>
       </div>
     </div>
   </section>
 
-  <section class="room">
+  <!-- 5. APPROACH -->
+  <section class="approach" id="approach">
     <div class="wrap">
-      <span class="note">From recent workshops</span>
-      <h2>Short lectures. Lots of doing.</h2>
-      <p class="lead">Every idea is followed by a game, a challenge or a role-play, so people practise it before they leave the room.</p>
-      <div class="methods" role="group" aria-label="How we teach"><button type="button" class="chip" data-i="0" aria-pressed="true">Fun building activities</button><button type="button" class="chip" data-i="1" aria-pressed="false">Mind games</button><button type="button" class="chip" data-i="2" aria-pressed="false">Physical games</button><button type="button" class="chip" data-i="3" aria-pressed="false">Group activities</button><button type="button" class="chip" data-i="4" aria-pressed="false">Challenges</button></div><div class="method-panel" id="mpanel" aria-live="polite"></div><script>window.METHODS=[["Fun building activities", "Ice-breakers and energisers that relax the room in the first few minutes, so even quiet people start speaking up.", "img/group-certs.jpg"], ["Mind games", "Short puzzles that catch us confusing facts with stories, and show how much our interpretation shapes the outcome.", "img/hand-raised.jpg"], ["Physical games", "Team challenges where everyone has to move together, like the ball passing challenge and the helium stick. Harder than they look.", "img/helium-up.jpg"], ["Group activities", "Table work where teams apply the tools to their own work: My Professional Avatar, the productivity activity, turning gripes into goals.", "img/sticky-notes.jpg"], ["Challenges", "Role-plays of real situations: a conversation with your manager, addressing a team member who keeps coming late, showing grace under fire.", "img/usman-mic.jpg"]];</script>
-      <div class="wall">
-        <figure class="tall"><video src="vid/suzuki-reel.mp4" poster="vid/suzuki-poster.jpg" controls playsinline preload="none"></video><figcaption>Watch a session</figcaption></figure>
-        <figure><button type="button" class="zoom" data-src="img/usman-mic.jpg" data-cap="Communicate to Connect"><img src="img/usman-mic.jpg" alt="Usman Gulzari speaking to the room"></button><figcaption>Communicate to Connect</figcaption></figure>
-        <figure><button type="button" class="zoom" data-src="img/helium-stick.jpg" data-cap="Harder than it looks"><img src="img/helium-stick.jpg" alt="Participants holding the helium stick"></button><figcaption>Harder than it looks</figcaption></figure>
+      <div class="sh"><span class="num"><i>4</i>How it's taught</span><h2>Short lectures. Lots of practice.</h2></div>
+      <div class="quote">
+        <blockquote>"Learning cannot be enforced. Our job is to create an environment where participants choose to learn, grow and commit to transform themselves."</blockquote>
+        <cite>Usman Gulzari</cite>
+      </div>
+      <div class="methods" role="group" aria-label="Methods">
+        <button type="button" class="chip" data-i="0" aria-pressed="true">Fun building activities</button>
+        <button type="button" class="chip" data-i="1" aria-pressed="false">Mind games</button>
+        <button type="button" class="chip" data-i="2" aria-pressed="false">Physical games</button>
+        <button type="button" class="chip" data-i="3" aria-pressed="false">Group activities</button>
+        <button type="button" class="chip" data-i="4" aria-pressed="false">Role-plays &amp; challenges</button>
+      </div>
+      <div class="method-panel" id="mpanel" aria-live="polite"></div>
+    </div>
+  </section>
+
+  <!-- 6. RESULTS -->
+  <section id="results">
+    <div class="wrap">
+      <div class="sh"><span class="num"><i>5</i>Results</span><h2>From recent workshops</h2><p class="lead">Tap a photo to see it larger.</p></div>
+      <div class="gallery">
         <figure><button type="button" class="zoom" data-src="img/lci-banner.jpg" data-cap="Reinvent Yourself at LCI"><img src="img/lci-banner.jpg" alt="Reinvent Yourself group at LCI"></button><figcaption>Reinvent Yourself at LCI</figcaption></figure>
-        <figure><button type="button" class="zoom" data-src="img/room-session.jpg" data-cap="Every table, every voice"><img src="img/room-session.jpg" alt="Workshop room with teams at round tables"></button><figcaption>Every table, every voice</figcaption></figure>
-        <figure class="tall"><video src="vid/reel-2.mp4" poster="vid/reel-2-poster.jpg" controls playsinline preload="none"></video><figcaption>Listening to understand</figcaption></figure>
-        <figure><button type="button" class="zoom" data-src="img/hand-raised.jpg" data-cap="Hands up"><img src="img/hand-raised.jpg" alt="Participant raising a hand to answer"></button><figcaption>Hands up</figcaption></figure>
-        <figure><button type="button" class="zoom" data-src="img/group-clap.jpg" data-cap="The end of day two"><img src="img/group-clap.jpg" alt="Workshop group photo"></button><figcaption>The end of day two</figcaption></figure>
+        <figure><button type="button" class="zoom" data-src="img/usman-mic.jpg" data-cap="Communicate to Connect"><img src="img/usman-mic.jpg" alt="Usman Gulzari speaking to the room"></button><figcaption>Communicate to Connect</figcaption></figure>
+        <figure><button type="button" class="zoom" data-src="img/helium-up.jpg" data-cap="Team challenge"><img src="img/helium-up.jpg" alt="Team doing the helium stick challenge"></button><figcaption>Team challenge</figcaption></figure>
+        <figure><button type="button" class="zoom" data-src="img/sticky-notes.jpg" data-cap="Group activity"><img src="img/sticky-notes.jpg" alt="Participants working with sticky notes"></button><figcaption>Group activity</figcaption></figure>
+        <figure><button type="button" class="zoom" data-src="img/mountain-map.jpg" data-cap="Frontline development program"><img src="img/mountain-map.jpg" alt="Usman guiding a table exercise"></button><figcaption>Frontline development program</figcaption></figure>
+        <figure><button type="button" class="zoom" data-src="img/room-session.jpg" data-cap="In session"><img src="img/room-session.jpg" alt="Workshop room with teams at round tables"></button><figcaption>In session</figcaption></figure>
+        <figure><button type="button" class="zoom" data-src="img/hand-raised.jpg" data-cap="Every voice counts"><img src="img/hand-raised.jpg" alt="Participant raising a hand"></button><figcaption>Every voice counts</figcaption></figure>
+        <figure><button type="button" class="zoom" data-src="img/group-clap.jpg" data-cap="End of the workshop"><img src="img/group-clap.jpg" alt="Workshop group photo"></button><figcaption>End of the workshop</figcaption></figure>
+      </div>
+      <div class="videos">
+        <div class="vcard feature"><video src="vid/nadir-testimonial.mp4" poster="vid/nadir-poster.jpg" controls playsinline preload="none"></video><span class="label">Client testimonial</span><p><b>Nadir Khusro Gillani</b>Chief Commercial Officer, Lucky Cement</p></div>
+        <div class="vcard"><video src="vid/suzuki-reel.mp4" poster="vid/suzuki-poster.jpg" controls playsinline preload="none"></video><p><b>Workshop highlights</b>Inside a recent session</p></div>
+        <div class="vcard"><video src="vid/reel-2.mp4" poster="vid/reel-2-poster.jpg" controls playsinline preload="none"></video><p><b>In the room</b>Participants at work</p></div>
       </div>
     </div>
   </section>
 
-  <section class="voice">
-    <div class="wrap voice-grid">
-      <figure class="voice-vid"><video src="vid/nadir-testimonial.mp4" poster="vid/nadir-poster.jpg" controls playsinline preload="none"></video></figure>
-      <div>
-        <span class="note">In his own words</span>
-        <h2>"Hear it from the people who were in the room."</h2>
-        <p class="lead">Feedback recorded on the day of the workshop.</p>
-        <div class="who"><b>Nadir Khusro Gillani</b><span>Chief Commercial Officer, Lucky Cement</span></div>
-      </div>
-    </div>
-  </section>
-
-  <section>
+  <!-- 7. TRAINER -->
+  <section class="trainer" id="trainer">
     <div class="wrap trainer-grid">
-      <img src="img/usman-open-arms.jpg" alt="Usman Gulzari running an outdoor activity">
+      <img src="img/usman-open-arms.jpg" alt="Usman Gulzari facilitating an activity">
       <div>
-        <span class="note">Who will be in the room</span>
-        <h2>Usman Gulzari</h2>
-        <p class="lead">Lead Trainer at The Missing P. Author of <i>Wings to Fly</i>, and named in <i>Change Makers</i> among the 33 most influential personalities.</p>
-        <div class="facts"><div><b>14</b><span>years</span></div><div><b>125+</b><span>organisations</span></div><div><b>2,000+</b><span>trainings</span></div><div><b>50,000+</b><span>professionals</span></div></div>
+        <div class="sh" style="margin-bottom:0"><span class="num"><i>6</i>Your facilitator</span><h2>Usman Gulzari</h2></div>
+        <p class="lead" style="margin-top:14px">Lead Trainer at The Missing P. Author of <i>Wings to Fly</i>, and named in <i>Change Makers</i> among the 33 most influential personalities.</p>
+        <div class="stats"><div><b>14</b><span>years</span></div><div><b>125+</b><span>organisations</span></div><div><b>2,000+</b><span>trainings</span></div><div><b>50,000+</b><span>professionals</span></div></div>
       </div>
     </div>
   </section>
 
-  <section style="padding-top:0">
+  <!-- 8. FAQ -->
+  <section class="faq">
     <div class="wrap">
-      <h2>Is this right for your team?</h2>
-      <div class="fit">
-        <div class="yes"><h3>A good fit if</h3><ul><li>Your people are capable but stuck in blame or stress</li><li>Supervisors need to manage upwards and handle conflict</li><li>You want people to commit, not just comply</li></ul></div>
-        <div class="no"><h3>Not the right fit if</h3><ul><li>You need technical or product training</li><li>You want a lecture without participation</li></ul></div>
-      </div>
-      <div style="margin-top:40px">
-        <details><summary>Can it be adapted to our company?</summary><p>Yes. We start with a short needs call and build the role-plays around your team's real situations.</p></details>
-        <details><summary>Two days or one?</summary><p>Two days for supervisors and managers (Reinvent Yourself). One day for frontline teams (Gear Up for Excellence).</p></details>
-        <details><summary>Where does it happen?</summary><p>At your premises or a venue you choose, anywhere in Pakistan.</p></details>
-        <details><summary>What do participants take home?</summary><p>A workshop manual and a certificate.</p></details>
-      </div>
+      <div class="sh"><span class="num"><i>7</i>Questions</span><h2>What HR teams usually ask</h2></div>
+      <details><summary>Can the program be tailored to our company?</summary><p>Yes. We start with a short needs call and build the examples and role-plays around your team's real situations.</p></details>
+      <details><summary>Should we choose one day or two?</summary><p>Two days (Reinvent Yourself) for officers, supervisors and managers. One day (Gear Up for Excellence) for frontline teams.</p></details>
+      <details><summary>Where is it delivered?</summary><p>At your premises or a venue of your choice, anywhere in Pakistan.</p></details>
+      <details><summary>What do participants receive?</summary><p>A workshop manual and a certificate.</p></details>
     </div>
   </section>
 
-  <section class="plan" id="plan">
-    <div class="wrap plan-grid">
-      <div><span class="note">Next step</span><h2>Let's talk about your team</h2><p class="lead">Tell us a little about your team, then pick a time for a short call with us.</p></div>
-      <div class="slot"><b>Lead form + Calendly go here</b><p>Same setup as the Retreat page: team size, goals, timeline and your role, then the booking calendar.</p><a class="btn" href="#plan">Book a call →</a></div>
+  <!-- 9. CONTACT -->
+  <section class="contact" id="contact">
+    <div class="wrap contact-grid">
+      <div><div class="sh"><span class="num"><i>8</i>Next step</span><h2>Let's plan this for your team</h2></div><p class="lead">Tell us about your team, then pick a time for a short call.</p></div>
+      <div class="slot"><b>Lead form + Calendly go here</b><p>Same setup as the Retreat page: team size, goals, timeline and your role, then the booking calendar.</p><a class="btn" href="#contact">Book a call →</a></div>
     </div>
   </section>
 </main>
 <footer><div class="wrap">The Missing P · Empowering Human Potential · themissingp.com</div></footer>
+
 <script>
 (function(){
-  var M=window.METHODS,panel=document.getElementById('mpanel'),chips=document.querySelectorAll('.chip');
+  var M=[["Fun building activities","Ice-breakers and energisers that relax the room early, so even quiet participants start speaking up.","img/group-certs.jpg"],
+         ["Mind games","Short exercises that show how we mix up facts and stories, and how our interpretation shapes the outcome.","img/hand-raised.jpg"],
+         ["Physical games","Team challenges where everyone has to move together, such as the ball passing challenge.","img/helium-up.jpg"],
+         ["Group activities","Table work where teams apply the ideas to their own jobs, such as My Professional Avatar and the productivity activity.","img/sticky-notes.jpg"],
+         ["Role-plays & challenges","Real workplace situations practised in the room: a conversation with your manager, a team member who keeps coming late, staying calm under pressure.","img/usman-mic.jpg"]];
+  var panel=document.getElementById('mpanel'),chips=document.querySelectorAll('.chip');
   function show(i){chips.forEach(function(c,j){c.setAttribute('aria-pressed',j===i)});var m=M[i];
     panel.innerHTML='<img src="'+m[2]+'" alt=""><div><b>'+m[0]+'</b><p>'+m[1]+'</p></div>';}
   chips.forEach(function(c){c.addEventListener('click',function(){show(+c.dataset.i)})});show(0);
+
   var lb=document.createElement('div');lb.className='lightbox';lb.hidden=true;
   lb.innerHTML='<button type="button" class="lb-close" aria-label="Close">×</button><figure><img alt=""><figcaption></figcaption></figure>';
   document.body.appendChild(lb);
@@ -378,6 +406,12 @@ footer{padding-block:26px;background:#1E1916;color:#A89C92;font-size:.9rem}
     if(z){lb.querySelector('img').src=z.dataset.src;lb.querySelector('figcaption').textContent=z.dataset.cap;lb.hidden=false;return;}
     if(!lb.hidden&&(e.target===lb||e.target.closest('.lb-close')))lb.hidden=true;});
   document.addEventListener('keydown',function(e){if(e.key==='Escape')lb.hidden=true});
+
+  var links=document.querySelectorAll('.nav a');
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){es.forEach(function(en){if(en.isIntersecting){links.forEach(function(a){a.classList.toggle('on',a.getAttribute('href')==='#'+en.target.id)})}})},{rootMargin:'-40% 0px -55% 0px'});
+    document.querySelectorAll('main section[id]').forEach(function(s){io.observe(s)});
+  }
 })();
 </script>
 </body>
