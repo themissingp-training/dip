@@ -247,6 +247,54 @@ footer{padding-block:24px;background:#1E1916;color:#A89C92;font-size:.9rem}
 .quote{position:relative;overflow:hidden}
 .quote::after{content:"\201C";position:absolute;right:24px;top:-30px;font:400 11rem/1 var(--fd);color:rgba(255,255,255,.08)}
 
+
+/* --- attractive pass --- */
+.hero{background:linear-gradient(135deg,#123E43 0%,#1D5C63 55%,#2B6E6A 100%);color:#fff;padding-block:56px 70px;position:relative;overflow:hidden}
+.hero::after{content:"";position:absolute;right:-160px;bottom:-200px;width:520px;height:520px;border-radius:50%;background:radial-gradient(circle,rgba(227,155,45,.35),transparent 65%);pointer-events:none}
+.hero .wrap{position:relative;z-index:1}
+.hero .tag{background:rgba(255,255,255,.12);color:#F4C77A}
+.hero h1{color:#fff;font-size:clamp(3rem,8vw,5.2rem)}
+.hero h1::after{content:"";display:block;width:110px;height:6px;border-radius:6px;background:var(--sun);margin-top:14px}
+.hero .subtitle{color:#F4C77A}
+.hero .lead{color:#D6E6E4}
+.hero .facts div{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.14)}
+.hero .facts div:hover{background:rgba(255,255,255,.16)}
+.hero .facts b{color:#fff}.hero .facts span{color:#BFD6D3}
+.hero .btn{background:var(--sun);color:#2A2420;box-shadow:0 8px 22px rgba(227,155,45,.4)}
+.hero .btn:hover{background:#F0AC44}
+.hero .btn-line{background:transparent;color:#fff;box-shadow:inset 0 0 0 1.5px rgba(255,255,255,.7)}
+.hero .btn-line:hover{background:#fff;color:var(--teal)}
+.mosaic .zoom{border:3px solid rgba(255,255,255,.18)}
+.numbers{background:var(--paper);border-bottom:1px solid var(--line)}
+.numbers-in{display:grid;grid-template-columns:repeat(2,1fr);gap:0}
+@media(min-width:800px){.numbers-in{grid-template-columns:repeat(4,1fr)}}
+.numbers-in div{padding:26px 18px;text-align:center;border-right:1px solid var(--line)}
+.numbers-in div:last-child{border-right:0}
+.numbers-in b{display:block;font:400 clamp(2rem,4.4vw,2.9rem)/1 var(--fd);color:var(--teal);font-variant-numeric:tabular-nums}
+.numbers-in span{font-size:.86rem;color:var(--soft)}
+.ch-ic{width:46px;height:46px;border-radius:14px;display:grid;place-items:center;background:var(--teal-l);color:var(--teal);transition:background .25s,color .25s,transform .25s}
+.ch-ic svg{width:24px;height:24px}
+.ch:hover .ch-ic{background:var(--teal);color:#fff;transform:rotate(-6deg)}
+.ch{grid-template-columns:1fr}
+.program{background:linear-gradient(180deg,#123E43,#1D5C63);color:#fff}
+.program .sh .num{color:#F4C77A}
+.program .hint{color:#BFD6D3}
+.program .day{color:var(--ink)}
+.program .outcomes{background:#fff;color:var(--ink)}
+.program .outcomes h3{color:var(--teal)}
+.band img{transition:transform .3s}.band img:hover{transform:scale(1.04)}
+.approach-grid{display:grid;gap:28px;align-items:stretch}
+@media(min-width:900px){.approach-grid{grid-template-columns:.8fr 1.2fr;gap:36px}}
+.approach-pic img{width:100%;height:100%;min-height:280px;object-fit:cover;border-radius:22px;box-shadow:14px 14px 0 var(--teal-l)}
+.approach .methods{margin-top:20px}
+@media(min-width:900px){.gallery{grid-auto-rows:170px}.gallery figure:nth-child(1){grid-column:span 2;grid-row:span 2}.gallery figure:nth-child(6){grid-column:span 2}}
+@media(min-width:900px){.gallery .zoom,.gallery .zoom img{height:100%}.gallery .zoom img{aspect-ratio:auto}.gallery figure{grid-template-rows:1fr auto}}
+.contact{background:linear-gradient(135deg,#2A2420,#3A2F28);position:relative;overflow:hidden}
+.contact::before{content:"";position:absolute;inset:0;background:url(img/hall-wide.jpg) center/cover;opacity:.12}
+.contact .wrap{position:relative}
+.slot{box-shadow:0 20px 40px rgba(0,0,0,.3)}
+.sh h2{position:relative}
+
 .lightbox{position:fixed;inset:0;z-index:60;background:rgba(30,25,22,.9);display:grid;place-items:center;padding:24px}
 .lightbox figure{background:#fff;padding:10px 10px 12px;border-radius:10px;max-width:min(1000px,100%)}
 .lightbox img{max-height:78vh;width:auto;margin:auto;border-radius:6px}
@@ -297,17 +345,26 @@ footer{padding-block:24px;background:#1E1916;color:#A89C92;font-size:.9rem}
     </div></div>
   </div>
 
+  <div class="numbers">
+    <div class="wrap numbers-in">
+      <div><b data-n="14">14</b><span>years of training teams</span></div>
+      <div><b data-n="125" data-s="+">125+</b><span>organisations</span></div>
+      <div><b data-n="2000" data-s="+">2,000+</b><span>trainings delivered</span></div>
+      <div><b data-n="50000" data-s="+">50,000+</b><span>professionals trained</span></div>
+    </div>
+  </div>
+
   <!-- 2. CHALLENGES -->
   <section id="challenges">
     <div class="wrap">
       <div class="sh"><span class="num"><i>1</i>The challenges it solves</span><h2>Six problems we see in most teams, and what changes</h2></div>
       <div class="ch-grid">
-        <article class="ch"><span class="ch-n">01</span><span class="pb">Challenge</span><h3>Blame instead of ownership</h3><p class="fix"><b>After:</b> people take 100% responsibility for results and focus on what they can control.</p></article>
-        <article class="ch"><span class="ch-n">02</span><span class="pb">Challenge</span><h3>Stress turning into anxiety</h3><p class="fix"><b>After:</b> complaints become goals, and pressure is handled with a calmer, growth mindset.</p></article>
-        <article class="ch"><span class="ch-n">03</span><span class="pb">Challenge</span><h3>Busy, but not productive</h3><p class="fix"><b>After:</b> work is prioritised and aligned with organisational goals, so the important things get done.</p></article>
-        <article class="ch"><span class="ch-n">04</span><span class="pb">Challenge</span><h3>Poor communication</h3><p class="fix"><b>After:</b> people listen to understand and communicate in a way that builds trust.</p></article>
-        <article class="ch"><span class="ch-n">05</span><span class="pb">Challenge</span><h3>Difficulty managing upwards</h3><p class="fix"><b>After:</b> staff manage expectations, show their work and influence without authority.</p></article>
-        <article class="ch"><span class="ch-n">06</span><span class="pb">Challenge</span><h3>Conflict that turns personal</h3><p class="fix"><b>After:</b> disagreements are handled calmly, with common ground found on interests, not positions.</p></article>
+        <article class="ch"><span class="ch-n">01</span><span class="ch-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l7 4v5c0 4.5-3 7.6-7 9-4-1.4-7-4.5-7-9V7z"/><path d="M9 12l2 2 4-4"/></svg></span><span class="pb">Challenge</span><h3>Blame instead of ownership</h3><p class="fix"><b>After:</b> people take 100% responsibility for results and focus on what they can control.</p></article>
+        <article class="ch"><span class="ch-n">02</span><span class="ch-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12h3l3-7 4 14 3-7h5"/></svg></span><span class="pb">Challenge</span><h3>Stress turning into anxiety</h3><p class="fix"><b>After:</b> complaints become goals, and pressure is handled with a calmer, growth mindset.</p></article>
+        <article class="ch"><span class="ch-n">03</span><span class="ch-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span><span class="pb">Challenge</span><h3>Busy, but not productive</h3><p class="fix"><b>After:</b> work is prioritised and aligned with organisational goals, so the important things get done.</p></article>
+        <article class="ch"><span class="ch-n">04</span><span class="ch-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5h16v10H8l-4 4z"/><path d="M8 9h8M8 12h5"/></svg></span><span class="pb">Challenge</span><h3>Poor communication</h3><p class="fix"><b>After:</b> people listen to understand and communicate in a way that builds trust.</p></article>
+        <article class="ch"><span class="ch-n">05</span><span class="ch-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5"/><path d="M6 11l6-6 6 6"/><path d="M5 21h14"/></svg></span><span class="pb">Challenge</span><h3>Difficulty managing upwards</h3><p class="fix"><b>After:</b> staff manage expectations, show their work and influence without authority.</p></article>
+        <article class="ch"><span class="ch-n">06</span><span class="ch-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 7l10 10M17 7L7 17"/><circle cx="12" cy="12" r="9"/></svg></span><span class="pb">Challenge</span><h3>Conflict that turns personal</h3><p class="fix"><b>After:</b> disagreements are handled calmly, with common ground found on interests, not positions.</p></article>
       </div>
     </div>
   </section>
@@ -393,7 +450,7 @@ footer{padding-block:24px;background:#1E1916;color:#A89C92;font-size:.9rem}
   <section class="approach" id="approach">
     <div class="wrap">
       <div class="sh"><span class="num"><i>4</i>How it's taught</span><h2>Short lectures. Lots of practice.</h2></div>
-      <div class="quote">
+      <div class="approach-grid"><div class="approach-pic"><img src="img/helium-up.jpg" alt="Participants in a team challenge"></div><div><div class="quote">
         <blockquote>"Learning cannot be enforced. Our job is to create an environment where participants choose to learn, grow and commit to transform themselves."</blockquote>
         <cite>Usman Gulzari</cite>
       </div>
@@ -404,7 +461,7 @@ footer{padding-block:24px;background:#1E1916;color:#A89C92;font-size:.9rem}
         <button type="button" class="chip" data-i="3" aria-pressed="false">Group activities</button>
         <button type="button" class="chip" data-i="4" aria-pressed="false">Role-plays &amp; challenges</button>
       </div>
-      <div class="method-panel" id="mpanel" aria-live="polite"></div>
+      <div class="method-panel" id="mpanel" aria-live="polite"></div></div></div>
     </div>
   </section>
 
@@ -487,6 +544,14 @@ footer{padding-block:24px;background:#1E1916;color:#A89C92;font-size:.9rem}
   if('IntersectionObserver' in window){
     var io=new IntersectionObserver(function(es){es.forEach(function(en){if(en.isIntersecting){links.forEach(function(a){a.classList.toggle('on',a.getAttribute('href')==='#'+en.target.id)})}})},{rootMargin:'-40% 0px -55% 0px'});
     document.querySelectorAll('main section[id]').forEach(function(s){io.observe(s)});
+  }
+  var nums=document.querySelectorAll('.numbers b[data-n]');
+  if('IntersectionObserver' in window && !matchMedia('(prefers-reduced-motion: reduce)').matches){
+    var done=false,io2=new IntersectionObserver(function(es){if(done||!es[0].isIntersecting)return;done=true;
+      nums.forEach(function(el){var t=+el.dataset.n,sf=el.dataset.s||'',st=null;
+        function f(ts){if(!st)st=ts;var p=Math.min((ts-st)/1200,1);el.textContent=Math.round(t*(1-Math.pow(1-p,3))).toLocaleString('en-US')+sf;if(p<1)requestAnimationFrame(f)}
+        requestAnimationFrame(f)})},{threshold:.4});
+    var nb=document.querySelector('.numbers'); if(nb) io2.observe(nb);
   }
 })();
 </script>
