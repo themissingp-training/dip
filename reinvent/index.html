@@ -183,6 +183,70 @@ h2{font-size:clamp(1.8rem,4vw,2.6rem)}
 .slot p{color:var(--soft)} .slot .btn{justify-self:start;margin-top:6px}
 footer{padding-block:24px;background:#1E1916;color:#A89C92;font-size:.9rem}
 
+
+/* --- modern pass --- */
+.nav a{transition:background .2s,color .2s}
+.nav a:hover{background:var(--teal-l);color:var(--teal)}
+.nav a.on{background:var(--teal);color:#fff}
+.top .btn{box-shadow:0 4px 14px rgba(29,92,99,.25)}
+.btn{box-shadow:0 6px 18px rgba(29,92,99,.22)}
+.btn:hover{box-shadow:0 10px 24px rgba(29,92,99,.3)}
+.btn-line{box-shadow:inset 0 0 0 1.5px var(--ink)}
+.btn-line:hover{background:var(--ink);color:#fff}
+.hero{background:radial-gradient(900px 420px at 85% 0%,rgba(227,155,45,.14),transparent 60%),radial-gradient(700px 400px at 0% 100%,rgba(29,92,99,.08),transparent 60%)}
+.mosaic{position:relative;display:grid;gap:10px;grid-template-columns:1.3fr 1fr;grid-template-rows:200px 150px 150px}
+.mosaic .zoom{border-radius:18px;overflow:hidden;box-shadow:0 10px 26px rgba(42,36,32,.14)}
+.mosaic img{width:100%;height:100%;object-fit:cover;aspect-ratio:auto}
+.m1{grid-row:1/3}.m2{grid-row:1/2}.m3{grid-row:2/4}.m4{grid-row:3/4}
+.badge{position:absolute;left:-14px;bottom:24px;background:var(--sun);color:#fff;border-radius:16px;padding:10px 16px;font-size:.82rem;font-weight:700;box-shadow:0 10px 24px rgba(185,118,26,.35)}
+.badge b{display:block;font:400 1.6rem/1 var(--fd)}
+@media(max-width:600px){.mosaic{grid-template-rows:150px 110px 110px}.badge{left:8px}}
+.facts div{transition:transform .2s,background .2s}
+.facts div:hover{background:var(--teal-l);transform:translateY(-3px)}
+.ch{position:relative;overflow:hidden;transition:transform .25s,box-shadow .25s,border-color .25s}
+.ch::before{content:"";position:absolute;left:0;top:0;right:0;height:4px;background:linear-gradient(90deg,var(--teal),var(--sun));transform:scaleX(0);transform-origin:left;transition:transform .3s}
+.ch:hover{transform:translateY(-5px);box-shadow:0 16px 34px rgba(42,36,32,.12);border-color:transparent}
+.ch:hover::before{transform:scaleX(1)}
+.ch-n{position:absolute;right:18px;top:12px;font:400 2.4rem/1 var(--fd);color:var(--sand);transition:color .25s}
+.ch:hover .ch-n{color:var(--teal-l)}
+.band{overflow:hidden;padding-block:6px;background:var(--paper)}
+.band-track{display:flex;gap:10px;width:max-content;animation:slide 70s linear infinite}
+.band:hover .band-track{animation-play-state:paused}
+.band img{height:180px;width:260px;object-fit:cover;border-radius:14px}
+.day{transition:box-shadow .25s}
+.day:hover{box-shadow:0 14px 30px rgba(42,36,32,.08)}
+.day ol>li{transition:background .2s}
+.day ol>li:hover{background:rgba(220,235,234,.45)}
+.day details[open]{background:transparent}
+.day details[open] summary b{color:var(--teal)}
+.day summary::after,.gmod summary::after{transition:background .2s,color .2s,transform .2s}
+.day summary:hover::after,.gmod summary:hover::after{background:var(--teal);color:#fff}
+.fmt{overflow:hidden;transition:transform .25s,box-shadow .25s}
+.fmt:hover{transform:translateY(-4px);box-shadow:0 18px 36px rgba(42,36,32,.12)}
+.fmt-pic{width:calc(100% + 48px);margin:-24px -24px 6px;height:190px;object-fit:cover}
+.gmod summary:hover{color:var(--teal)}
+.chip:hover{background:var(--teal-l);color:var(--teal);border-color:var(--teal)}
+.chip[aria-pressed="true"]:hover{background:var(--teal-d);color:#fff}
+.method-panel{box-shadow:0 10px 26px rgba(42,36,32,.08);animation:fade .35s ease}
+@keyframes fade{from{opacity:.3;transform:translateY(6px)}to{opacity:1;transform:none}}
+.gallery figure{position:relative}
+.gallery .zoom{position:relative}
+.gallery .zoom::after{content:"View";position:absolute;inset:0;display:grid;place-items:center;background:rgba(29,92,99,.55);color:#fff;font-weight:800;letter-spacing:.06em;opacity:0;transition:opacity .25s}
+.gallery .zoom:hover::after{opacity:1}
+.videos.two{grid-template-columns:1fr}
+@media(min-width:700px){.videos.two{grid-template-columns:repeat(2,minmax(0,340px));justify-content:center}}
+.vcard{transition:transform .25s,box-shadow .25s}
+.vcard:hover{transform:translateY(-4px);box-shadow:0 16px 32px rgba(42,36,32,.12)}
+.stats div{transition:transform .2s,background .2s}
+.stats div:hover{transform:translateY(-3px);background:var(--teal-l)}
+.faq details{transition:background .2s;padding-inline:12px;border-radius:12px}
+.faq details:hover{background:var(--sand)}
+.faq details[open]{background:var(--sand)}
+.faq summary:hover{color:var(--teal)}
+.trainer-grid img{box-shadow:16px 16px 0 var(--teal-l)}
+.quote{position:relative;overflow:hidden}
+.quote::after{content:"\201C";position:absolute;right:24px;top:-30px;font:400 11rem/1 var(--fd);color:rgba(255,255,255,.08)}
+
 .lightbox{position:fixed;inset:0;z-index:60;background:rgba(30,25,22,.9);display:grid;place-items:center;padding:24px}
 .lightbox figure{background:#fff;padding:10px 10px 12px;border-radius:10px;max-width:min(1000px,100%)}
 .lightbox img{max-height:78vh;width:auto;margin:auto;border-radius:6px}
@@ -215,10 +279,13 @@ footer{padding-block:24px;background:#1E1916;color:#A89C92;font-size:.9rem}
         </div>
         <div class="ctas"><a class="btn" href="#contact">Plan it for your team →</a><a class="btn btn-line" href="#program">See the two days</a></div>
       </div>
-      <figure class="hero-pic">
-        <img src="img/group-certs.jpg" alt="Workshop participants celebrating at the end of the program">
-        <figcaption><b>Day two</b>Certificates in hand</figcaption>
-      </figure>
+      <div class="mosaic">
+        <button type="button" class="zoom m1" data-src="img/group-certs.jpg" data-cap="End of the workshop"><img src="img/group-certs.jpg" alt="Workshop participants celebrating"></button>
+        <button type="button" class="zoom m2" data-src="img/helium-up.jpg" data-cap="Team challenge"><img src="img/helium-up.jpg" alt="Team challenge"></button>
+        <button type="button" class="zoom m3" data-src="img/usman-mic.jpg" data-cap="Communicate to Connect"><img src="img/usman-mic.jpg" alt="Usman Gulzari facilitating"></button>
+        <button type="button" class="zoom m4" data-src="img/sticky-notes.jpg" data-cap="Group activity"><img src="img/sticky-notes.jpg" alt="Group activity with sticky notes"></button>
+        <span class="badge"><b>125+</b>organisations trained</span>
+      </div>
     </div>
   </section>
 
@@ -235,15 +302,22 @@ footer{padding-block:24px;background:#1E1916;color:#A89C92;font-size:.9rem}
     <div class="wrap">
       <div class="sh"><span class="num"><i>1</i>The challenges it solves</span><h2>Six problems we see in most teams, and what changes</h2></div>
       <div class="ch-grid">
-        <article class="ch"><span class="pb">Challenge</span><h3>Blame instead of ownership</h3><p class="fix"><b>After:</b> people take 100% responsibility for results and focus on what they can control.</p></article>
-        <article class="ch"><span class="pb">Challenge</span><h3>Stress turning into anxiety</h3><p class="fix"><b>After:</b> complaints become goals, and pressure is handled with a calmer, growth mindset.</p></article>
-        <article class="ch"><span class="pb">Challenge</span><h3>Busy, but not productive</h3><p class="fix"><b>After:</b> work is prioritised and aligned with organisational goals, so the important things get done.</p></article>
-        <article class="ch"><span class="pb">Challenge</span><h3>Poor communication</h3><p class="fix"><b>After:</b> people listen to understand and communicate in a way that builds trust.</p></article>
-        <article class="ch"><span class="pb">Challenge</span><h3>Difficulty managing upwards</h3><p class="fix"><b>After:</b> staff manage expectations, show their work and influence without authority.</p></article>
-        <article class="ch"><span class="pb">Challenge</span><h3>Conflict that turns personal</h3><p class="fix"><b>After:</b> disagreements are handled calmly, with common ground found on interests, not positions.</p></article>
+        <article class="ch"><span class="ch-n">01</span><span class="pb">Challenge</span><h3>Blame instead of ownership</h3><p class="fix"><b>After:</b> people take 100% responsibility for results and focus on what they can control.</p></article>
+        <article class="ch"><span class="ch-n">02</span><span class="pb">Challenge</span><h3>Stress turning into anxiety</h3><p class="fix"><b>After:</b> complaints become goals, and pressure is handled with a calmer, growth mindset.</p></article>
+        <article class="ch"><span class="ch-n">03</span><span class="pb">Challenge</span><h3>Busy, but not productive</h3><p class="fix"><b>After:</b> work is prioritised and aligned with organisational goals, so the important things get done.</p></article>
+        <article class="ch"><span class="ch-n">04</span><span class="pb">Challenge</span><h3>Poor communication</h3><p class="fix"><b>After:</b> people listen to understand and communicate in a way that builds trust.</p></article>
+        <article class="ch"><span class="ch-n">05</span><span class="pb">Challenge</span><h3>Difficulty managing upwards</h3><p class="fix"><b>After:</b> staff manage expectations, show their work and influence without authority.</p></article>
+        <article class="ch"><span class="ch-n">06</span><span class="pb">Challenge</span><h3>Conflict that turns personal</h3><p class="fix"><b>After:</b> disagreements are handled calmly, with common ground found on interests, not positions.</p></article>
       </div>
     </div>
   </section>
+
+  <div class="band" aria-label="Workshop photos">
+    <div class="band-track">
+      <img src="img/hall-wide.jpg" alt=""><img src="img/helium-stick.jpg" alt=""><img src="img/frontline-group.jpg" alt=""><img src="img/room-session.jpg" alt=""><img src="img/usman-open-arms.jpg" alt=""><img src="img/mountain-map.jpg" alt=""><img src="img/hand-raised.jpg" alt="">
+      <img src="img/hall-wide.jpg" alt=""><img src="img/helium-stick.jpg" alt=""><img src="img/frontline-group.jpg" alt=""><img src="img/room-session.jpg" alt=""><img src="img/usman-open-arms.jpg" alt=""><img src="img/mountain-map.jpg" alt=""><img src="img/hand-raised.jpg" alt="">
+    </div>
+  </div>
 
   <!-- 3. PROGRAM -->
   <section class="program" id="program">
@@ -292,12 +366,14 @@ footer{padding-block:24px;background:#1E1916;color:#A89C92;font-size:.9rem}
       <div class="sh"><span class="num"><i>3</i>Formats</span><h2>Choose the version that fits your team</h2></div>
       <div class="formats">
         <article class="fmt main">
+          <img class="fmt-pic" src="img/group-clap.jpg" alt="Reinvent Yourself participants">
           <span class="len">2 days</span>
           <h3>Reinvent Yourself</h3>
           <p class="lead">The full program on personal leadership and effective management.</p>
           <dl><dt>For</dt><dd>Officers, supervisors and managers</dd><dt>Modules</dt><dd>8 (see the two days above)</dd><dt>Includes</dt><dd>Workshop manual and certificates</dd></dl>
         </article>
         <article class="fmt alt">
+          <img class="fmt-pic" src="img/frontline-group.jpg" alt="Frontline development program group">
           <span class="len">1 day</span>
           <h3>Gear Up for Excellence</h3>
           <p class="lead">A frontline development program built on realistic workplace situations, role-plays and simulations.</p>
@@ -346,8 +422,8 @@ footer{padding-block:24px;background:#1E1916;color:#A89C92;font-size:.9rem}
         <figure><button type="button" class="zoom" data-src="img/hand-raised.jpg" data-cap="Every voice counts"><img src="img/hand-raised.jpg" alt="Participant raising a hand"></button><figcaption>Every voice counts</figcaption></figure>
         <figure><button type="button" class="zoom" data-src="img/group-clap.jpg" data-cap="End of the workshop"><img src="img/group-clap.jpg" alt="Workshop group photo"></button><figcaption>End of the workshop</figcaption></figure>
       </div>
-      <div class="videos">
-        <div class="vcard feature"><video src="vid/nadir-testimonial.mp4" poster="vid/nadir-poster.jpg" controls playsinline preload="none"></video><span class="label">Client testimonial</span><p><b>Nadir Khusro Gillani</b>Chief Commercial Officer, Lucky Cement</p></div>
+      <div class="videos two">
+        
         <div class="vcard"><video src="vid/suzuki-reel.mp4" poster="vid/suzuki-poster.jpg" controls playsinline preload="none"></video><p><b>Workshop highlights</b>Inside a recent session</p></div>
         <div class="vcard"><video src="vid/reel-2.mp4" poster="vid/reel-2-poster.jpg" controls playsinline preload="none"></video><p><b>In the room</b>Participants at work</p></div>
       </div>
