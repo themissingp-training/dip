@@ -6,14 +6,14 @@
 <title>Meri Shanakht | The Missing P</title>
 <meta name="description" content="Meri Shanakht: a one-day Urdu workshop for frontline and non-management teams by The Missing P, led by Usman Gulzari. 225+ workshops delivered.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Nastaliq+Urdu:wght@500;700&family=Outfit:wght@500;600;700;800&family=Manrope:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Nastaliq+Urdu:wght@500;700&family=Noto+Naskh+Arabic:wght@600;700&family=Outfit:wght@500;600;700;800&family=Manrope:wght@400;500;600;700&display=swap">
 <style>
 /* Meri Shanakht: midnight + marigold, Urdu Nastaliq as the hero voice.
    Five symbols (Chashma, Daira, Remote, Chabi, Haathi) each own an accent colour drawn from the logo's hands. */
 :root{
   --night:#0F1230; --night2:#171B44; --night3:#21265A; --cream:#FBF6EC; --paper:#FFFDF8; --ink:#16182E; --soft:#5E6078; --line:#E9E2D4;
   --gold:#F2B33D; --gold-d:#C98A12; --coral:#EF6F57; --sky:#4FA3E0; --green:#5DB146; --violet:#8E7CF0;
-  --fu:"Noto Nastaliq Urdu","Jameel Noori Nastaleeq",serif; --fd:"Outfit",system-ui,sans-serif; --fb:"Manrope",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --fu:"Noto Nastaliq Urdu","Jameel Noori Nastaleeq",serif; --fn:"Noto Naskh Arabic","Noto Nastaliq Urdu",serif; --fd:"Outfit",system-ui,sans-serif; --fb:"Manrope",system-ui,-apple-system,"Segoe UI",sans-serif;
   color-scheme:light;
 }
 *{box-sizing:border-box}[hidden]{display:none!important}
@@ -41,7 +41,7 @@ h2{font-size:clamp(1.9rem,4.4vw,2.9rem);font-weight:800;letter-spacing:-.02em}
 .top{position:sticky;top:0;z-index:30;background:rgba(15,18,48,.96);backdrop-filter:blur(8px);color:#fff}
 .top-row{display:flex;justify-content:space-between;align-items:center;gap:12px;padding-block:10px}
 .brand{display:flex;align-items:center;gap:12px;font:700 1.05rem var(--fd)}
-.brand .ur{font-size:1.1rem;color:var(--gold);line-height:2.2}
+.brand .ur{font-family:var(--fn);font-size:1.35rem;color:var(--gold);line-height:1.2}
 .brand small{display:block;font:500 .72rem var(--fb);color:#AEB2D6;letter-spacing:.04em}
 .top .btn{padding:9px 16px;font-size:.88rem;box-shadow:none}
 .nav{display:flex;gap:6px;overflow-x:auto;padding-bottom:10px;scrollbar-width:none}
@@ -56,7 +56,7 @@ h2{font-size:clamp(1.9rem,4.4vw,2.9rem);font-weight:800;letter-spacing:-.02em}
 .hero-grid{position:relative;display:grid;gap:40px;align-items:center}
 @media(min-width:960px){.hero-grid{grid-template-columns:1.1fr .9fr}}
 .tag{display:inline-block;font:700 .78rem var(--fd);letter-spacing:.12em;text-transform:uppercase;color:var(--gold);border:1px solid rgba(242,179,61,.45);padding:6px 12px;border-radius:999px}
-.hero .ur.big{font-size:clamp(3rem,10vw,5.6rem);color:var(--gold);line-height:2.3;margin-top:4px;padding-bottom:.35em;text-align:left;overflow:visible}
+.hero .ur.big{font-family:var(--fn);font-size:clamp(3.2rem,11vw,6rem);color:var(--gold);line-height:1.35;margin:14px 0 8px;text-align:left;unicode-bidi:isolate}
 .hero h1{font-size:clamp(1.6rem,3.6vw,2.3rem);font-weight:700;margin-top:0;position:relative}
 .hero h1 span{color:#AEB2D6;font-weight:500}
 .hero .lead{color:#C9CCEA;margin-top:18px}
@@ -195,7 +195,7 @@ h2{font-size:clamp(1.9rem,4.4vw,2.9rem);font-weight:800;letter-spacing:-.02em}
 .trainer .lead{color:#C9CCEA}.trainer .kick{color:var(--gold)}.trainer .kick i{background:var(--gold);color:var(--night)}
 .tr-grid{display:grid;gap:34px;align-items:center}
 @media(min-width:880px){.tr-grid{grid-template-columns:.85fr 1.15fr;gap:56px}}
-.tr-grid img{width:100%;aspect-ratio:4/3.4;object-fit:cover;border-radius:26px;box-shadow:16px 16px 0 rgba(242,179,61,.35)}
+.tr-grid img{width:100%;aspect-ratio:4/3.4;object-fit:cover;object-position:50% 25%;border-radius:26px;box-shadow:16px 16px 0 rgba(242,179,61,.35)}
 .tr-stats{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:24px}
 @media(min-width:600px){.tr-stats{grid-template-columns:repeat(4,1fr)}}
 .tr-stats div{background:var(--night2);border-radius:16px;padding:14px;transition:.2s}
@@ -217,6 +217,37 @@ h2{font-size:clamp(1.9rem,4.4vw,2.9rem);font-weight:800;letter-spacing:-.02em}
 @media(min-width:880px){.ct-grid{grid-template-columns:1fr 1fr}}
 .slot{background:var(--paper);color:var(--ink);border-radius:24px;padding:28px;display:grid;gap:10px;box-shadow:0 24px 50px rgba(0,0,0,.3)}
 .slot p{color:var(--soft)}.slot .btn{justify-self:start;margin-top:6px}
+
+.perks{list-style:none;padding:0;margin-top:20px;display:grid;gap:10px}
+.perks li{display:flex;gap:10px;color:#E3E5F7}
+.perks li::before{content:"✓";flex:none;width:22px;height:22px;border-radius:50%;background:var(--gold);color:var(--night);display:grid;place-items:center;font-weight:800;font-size:.75rem;margin-top:3px}
+.direct{margin-top:24px;padding:16px 18px;border-radius:16px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);display:grid;gap:4px}
+.direct p{color:#AEB2D6;font-size:.9rem}.direct b{font:600 1rem var(--fd);user-select:all}
+.slot{gap:0}
+.prog{display:flex;gap:6px;margin-bottom:16px}.prog i{flex:1;height:6px;border-radius:6px;background:var(--line)}.prog i.on{background:var(--gold)}
+.sl{font:700 .78rem var(--fd);letter-spacing:.1em;text-transform:uppercase;color:var(--soft);margin-bottom:10px}
+fieldset{border:0;padding:0;margin:0 0 18px;min-width:0}
+legend{font:700 1rem var(--fd);margin-bottom:10px;padding:0}
+legend small{font:500 .85rem var(--fb);color:var(--soft);margin-left:4px}
+.pills{display:flex;flex-wrap:wrap;gap:8px}
+.pills label{position:relative}
+.pills input{position:absolute;opacity:0;inset:0;margin:0;cursor:pointer}
+.pills span{display:inline-block;padding:9px 14px;border-radius:12px;border:1.5px solid var(--line);font-size:.93rem;font-weight:600;cursor:pointer;transition:.15s;background:#fff}
+.pills label:hover span{border-color:var(--gold)}
+.pills input:checked+span{background:var(--night);border-color:var(--night);color:var(--gold)}
+.pills input:focus-visible+span{outline:3px solid var(--gold);outline-offset:2px}
+.fields{display:grid;gap:12px}
+@media(min-width:600px){.fields{grid-template-columns:1fr 1fr}}
+.field{display:grid;gap:5px;min-width:0}.field label{font:600 .9rem var(--fd)}
+.field input{font:inherit;padding:12px 14px;border-radius:12px;border:1.5px solid var(--line);background:#fff;color:var(--ink);width:100%}
+.field input:focus{outline:none;border-color:var(--gold)}
+.full{grid-column:1/-1}
+.err{color:#C8412B;font-weight:700;font-size:.9rem;min-height:1.3em}
+.navrow{display:flex;justify-content:space-between;align-items:center;gap:12px}
+.back{background:none;border:0;font:700 .95rem var(--fd);color:var(--soft);cursor:pointer;padding:8px}
+.th-h{font:800 1.8rem var(--fd);margin-bottom:6px}
+.cal-alt{margin-top:10px;font-size:.9rem;text-align:center}.cal-alt a{color:var(--gold-d);font-weight:700}
+
 footer{padding-block:24px;background:#0A0C22;color:#8E92BA;font-size:.9rem}
 @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
 </style>
@@ -349,7 +380,7 @@ footer{padding-block:24px;background:#0A0C22;color:#8E92BA;font-size:.9rem}
 
   <section class="trainer" id="trainer">
     <div class="wrap tr-grid">
-      <img src="img/usman-room.jpg" alt="Usman Gulzari facilitating a workshop">
+      <img src="img/usman.jpg" alt="Usman Gulzari">
       <div>
         <div class="sh" style="margin-bottom:0"><span class="kick"><i>6</i>Your facilitator</span><h2>Usman Gulzari</h2></div>
         <p class="lead" style="margin-top:14px">Corporate trainer and public speaking coach. Author of <i>Wings to Fly</i>, named among Pakistan's 33 most influential personalities in <i>The Change Makers</i>, former president of Islamabad Toastmasters, and a regular guest on national TV.</p>
@@ -371,8 +402,54 @@ footer{padding-block:24px;background:#0A0C22;color:#8E92BA;font-size:.9rem}
 
   <section class="contact" id="contact">
     <div class="wrap ct-grid">
-      <div><div class="sh" style="margin-bottom:14px"><span class="kick"><i>8</i>Next step</span><h2>Bring Meri Shanakht to your team</h2></div><p class="lead">Tell us about your team, then pick a time for a short call.</p></div>
-      <div class="slot"><b>Lead form + Calendly go here</b><p>Same setup as the Retreat page: team size, number of sessions, timeline and your role, then the booking calendar.</p><a class="btn" href="#contact">Book a call →</a></div>
+      <div>
+        <div class="sh" style="margin-bottom:14px"><span class="kick"><i>8</i>Next step</span><h2>Bring Meri Shanakht to your team</h2></div>
+        <p class="lead">Answer a few quick questions (about a minute), then pick a time for a call with our team.</p>
+        <ul class="perks"><li>Number of sessions planned around your team size</li><li>Content tailored to your organisation's values</li><li>Urdu workbooks, pocket cards and certificates included</li></ul>
+        <div class="direct"><p>Prefer to talk directly?</p><b>WhatsApp: 0335-0560516</b><b>Email: themissingp.support@gmail.com</b></div>
+      </div>
+      <div class="slot" id="leadbox">
+        <form id="leadform" novalidate>
+          <div class="prog" aria-hidden="true"><i class="on"></i><i></i></div>
+          <div class="step" data-step="1">
+            <p class="sl">Step 1 of 2 · Your team</p>
+            <fieldset><legend>How many frontline staff would attend?</legend><div class="pills">
+              <label><input type="radio" name="team_size" id="ts1" value="Up to 25"><span>Up to 25</span></label>
+              <label><input type="radio" name="team_size" id="ts2" value="26–100"><span>26–100</span></label>
+              <label><input type="radio" name="team_size" id="ts3" value="101–500"><span>101–500</span></label>
+              <label><input type="radio" name="team_size" id="ts4" value="500+"><span>500+</span></label></div></fieldset>
+            <fieldset><legend>What do you want to improve? <small>Pick all that apply</small></legend><div class="pills">
+              <label><input type="checkbox" name="need" id="n1" value="Ownership"><span>Ownership</span></label>
+              <label><input type="checkbox" name="need" id="n2" value="Stress & resilience"><span>Stress &amp; resilience</span></label>
+              <label><input type="checkbox" name="need" id="n3" value="Pride in the organisation"><span>Pride in the organisation</span></label>
+              <label><input type="checkbox" name="need" id="n4" value="Anger & communication"><span>Anger &amp; communication</span></label>
+              <label><input type="checkbox" name="need" id="n5" value="Other"><span>Something else</span></label></div></fieldset>
+            <fieldset><legend>When are you planning it?</legend><div class="pills">
+              <label><input type="radio" name="timeline" id="t1" value="Within 1 month"><span>Within 1 month</span></label>
+              <label><input type="radio" name="timeline" id="t2" value="1–3 months"><span>1–3 months</span></label>
+              <label><input type="radio" name="timeline" id="t3" value="Just exploring"><span>Just exploring</span></label></div></fieldset>
+          </div>
+          <div class="step" data-step="2" hidden>
+            <p class="sl">Step 2 of 2 · Your details</p>
+            <div class="fields">
+              <div class="field"><label for="f-name">Full name</label><input id="f-name" name="name" autocomplete="name"></div>
+              <div class="field"><label for="f-desig">Designation</label><input id="f-desig" name="designation" placeholder="e.g. HR Manager"></div>
+              <div class="field"><label for="f-company">Organisation</label><input id="f-company" name="company" autocomplete="organization"></div>
+              <div class="field"><label for="f-email">Work email</label><input id="f-email" name="email" type="email" autocomplete="email"></div>
+              <div class="field full"><label for="f-phone">Phone / WhatsApp</label><input id="f-phone" name="phone" type="tel" placeholder="+92 3XX XXXXXXX"></div>
+            </div>
+          </div>
+          <p class="err" id="err" role="alert"></p>
+          <div class="navrow"><button type="button" class="back" id="backbtn" hidden>← Back</button><span></span><button type="submit" class="btn" id="nextbtn">Next →</button></div>
+        </form>
+        <div id="thanks" hidden>
+          <p class="sl">Received</p>
+          <h3 class="th-h">Thank you, <span id="t-name">there</span>!</h3>
+          <p>Pick a time below for a call with our team.</p>
+          <div id="cal-widget" style="min-width:280px;height:660px;margin-top:10px"></div>
+          <p class="cal-alt">Calendar not showing? <a href="https://calendly.com/themissingp-support/30min" target="_blank" rel="noopener">Open it in a new tab →</a></p>
+        </div>
+      </div>
     </div>
   </section>
 </main>
@@ -407,6 +484,22 @@ footer{padding-block:24px;background:#0A0C22;color:#8E92BA;font-size:.9rem}
           function f(ts){if(!st)st=ts;var p=Math.min((ts-st)/1200,1);el.textContent=Math.round(t*(1-Math.pow(1-p,3))).toLocaleString('en-US')+sf;if(p<1)requestAnimationFrame(f)}requestAnimationFrame(f)})},{threshold:.4}).observe(nb);
     }
   }
+  var CAL="https://calendly.com/themissingp-support/30min";
+  var form=document.getElementById('leadform'),step=1,err=document.getElementById('err'),nb=document.getElementById('nextbtn'),bb=document.getElementById('backbtn'),bars=form.querySelectorAll('.prog i');
+  function go(n){step=n;form.querySelectorAll('.step').forEach(function(s){s.hidden=+s.dataset.step!==n});bars.forEach(function(b,i){b.classList.toggle('on',i<n)});bb.hidden=n===1;nb.textContent=n===2?'See available times →':'Next →';err.textContent='';}
+  function has(n){return form.querySelector('[name="'+n+'"]:checked')}
+  bb.onclick=function(){go(1)};
+  form.addEventListener('submit',function(e){e.preventDefault();
+    if(step===1){if(!has('team_size'))return err.textContent='Please choose how many staff would attend.';if(!has('need'))return err.textContent='Please pick at least one area to improve.';if(!has('timeline'))return err.textContent='Please choose when you are planning it.';go(2);return;}
+    var ids=['f-name','f-desig','f-company','f-email','f-phone'];
+    for(var i=0;i<ids.length;i++){var el=document.getElementById(ids[i]);if(!el.value.trim()){el.focus();return err.textContent='Please add your '+el.labels[0].textContent.toLowerCase()+'.';}}
+    if(!/^\S+@\S+\.\S+$/.test(document.getElementById('f-email').value))return err.textContent='Please check your work email.';
+    form.hidden=true;var nm=document.getElementById('f-name').value.trim().split(' ')[0];document.getElementById('t-name').textContent=nm||'there';document.getElementById('thanks').hidden=false;
+    var pre={name:document.getElementById('f-name').value,email:document.getElementById('f-email').value};
+    function start(){window.Calendly&&window.Calendly.initInlineWidget({url:CAL+'?hide_gdpr_banner=1&primary_color=f2b33d',parentElement:document.getElementById('cal-widget'),prefill:pre})}
+    if(window.Calendly)start();else{var sc=document.createElement('script');sc.src='https://assets.calendly.com/assets/external/widget.js';sc.async=true;sc.onload=start;document.head.appendChild(sc);}
+    document.getElementById('contact').scrollIntoView({behavior:'smooth'});
+  });
 })();
 </script>
 </body>
