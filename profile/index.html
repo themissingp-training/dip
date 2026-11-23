@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>The Missing P · Potential, turned into performance</title>
+<meta name="description" content="The Missing P: corporate training by Usman Gulzari. 14 years, 125+ organisations, 2,000+ workshops, 50,000+ professionals.">
+<meta property="og:title" content="The Missing P · Potential, turned into performance">
+<meta property="og:description" content="Corporate training by Usman Gulzari for Engro, Unilever, Telenor, The World Bank and 125+ organisations.">
+<meta property="og:image" content="img/usman-trainer.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600&family=Jost:wght@400;500;600&display=swap">
+<style>
+/* The Missing P · house profile. Quiet luxury: ink black and warm ivory, champagne used sparingly.
+   Cormorant Garamond for the voice, Jost for everything practical. */
+:root{
+  --ink:#0E0D0B; --ink2:#17150F; --ink3:#221F18; --ivory:#F6F1E8; --paper:#FBF8F2; --line:#E4DACA; --soft:#6E665A;
+  --gold:#C9A46A; --gold-l:#E5CB9A; --gold-d:#9B7A43; --muted:#A89E8C;
+  --fd:"Cormorant Garamond",Georgia,serif; --fb:"Jost",system-ui,-apple-system,"Segoe UI",sans-serif;
+  color-scheme:light;
+}
+*{box-sizing:border-box}[hidden]{display:none!important}
+html{scroll-behavior:smooth;overflow-x:clip}
+body{overflow-x:clip}
+body{margin:0;background:var(--paper);color:var(--ink);font:400 17px/1.7 var(--fb);-webkit-font-smoothing:antialiased}
+img,video{display:block;max-width:100%}
+p,ul,figure,h1,h2,h3,blockquote{margin:0}
+.wrap{max-width:1180px;margin:0 auto;padding-left:max(20px,env(safe-area-inset-left,0px));padding-right:max(20px,env(safe-area-inset-right,0px))}
+section{padding-block:96px;scroll-margin-top:72px}
+h1,h2,h3{font-family:var(--fd);font-weight:500;line-height:1.02;letter-spacing:-.01em;text-wrap:balance}
+h2{font-size:clamp(2.4rem,5.6vw,4rem)}
+h2 em,h1 em{font-style:italic;color:var(--gold)}
+.eyebrow{display:flex;align-items:center;gap:14px;font:500 .74rem var(--fb);letter-spacing:.32em;text-transform:uppercase;color:var(--gold-d);margin-bottom:20px}
+.eyebrow::before{content:"";width:40px;height:1px;background:currentColor}
+.lead{color:var(--soft);max-width:58ch;font-size:1.06rem;font-weight:400}
+:focus-visible{outline:2px solid var(--gold);outline-offset:4px}
+.btn{display:inline-flex;align-items:center;gap:12px;padding:16px 30px;border-radius:999px;background:var(--gold);color:var(--ink);font:500 .92rem var(--fb);letter-spacing:.08em;text-transform:uppercase;text-decoration:none;border:0;cursor:pointer;transition:background .3s,transform .3s,box-shadow .3s}
+.btn:hover{background:var(--gold-l);transform:translateY(-2px);box-shadow:0 14px 30px rgba(201,164,106,.3)}
+.btn-line{background:transparent;color:var(--ivory);box-shadow:inset 0 0 0 1px rgba(246,241,232,.4)}
+.btn-line:hover{background:var(--ivory);color:var(--ink);box-shadow:none}
+.arrow{transition:transform .3s}.btn:hover .arrow,.card:hover .arrow{transform:translateX(5px)}
+
+/* nav */
+.top{position:fixed;inset:0 0 auto;z-index:40;transition:background .4s,backdrop-filter .4s;padding-top:env(safe-area-inset-top,0px)}
+.top.solid{background:rgba(14,13,11,.9);backdrop-filter:blur(10px)}
+.top-in{display:flex;justify-content:space-between;align-items:center;gap:16px;padding-block:16px}
+.logo{font:500 1.5rem var(--fd);color:var(--ivory);text-decoration:none;letter-spacing:.01em}
+.logo b{font-style:italic;color:var(--gold);font-weight:600}
+.menu{display:none;gap:30px}
+@media(min-width:960px){.menu{display:flex}}
+.menu a{color:#D8CFBF;text-decoration:none;font:500 .8rem var(--fb);letter-spacing:.18em;text-transform:uppercase;position:relative;padding-block:6px;transition:color .3s}
+.menu a::after{content:"";position:absolute;left:0;right:0;bottom:0;height:1px;background:var(--gold);transform:scaleX(0);transform-origin:right;transition:transform .35s}
+.menu a:hover,.menu a.on{color:var(--gold-l)}
+.menu a:hover::after,.menu a.on::after{transform:scaleX(1);transform-origin:left}
+.top .btn{padding:11px 20px;font-size:.76rem}
+
+/* hero */
+.hero{background:var(--ink);color:var(--ivory);padding-block:140px 0;position:relative;overflow:hidden}
+.hero::before{content:"";position:absolute;right:-10%;top:-20%;width:70vw;max-width:900px;aspect-ratio:1;border-radius:50%;background:radial-gradient(circle,rgba(201,164,106,.22),transparent 62%)}
+.hero-grid{position:relative;display:grid;gap:40px;align-items:end}
+@media(min-width:960px){.hero-grid{grid-template-columns:1.15fr .85fr}}
+.hero .eyebrow{color:var(--gold)}
+.hero h1{font-size:clamp(3.4rem,9vw,7.2rem);font-weight:500}
+.hero .lead{color:#CFC6B6;margin-top:28px}
+.ctas{display:flex;flex-wrap:wrap;gap:14px;margin-top:38px}
+.hero-copy{padding-bottom:70px}
+.portrait{position:relative;justify-self:center;width:min(460px,100%)}
+.portrait::before{content:"";position:absolute;inset:-14px -14px 0 -14px;border-radius:260px 260px 0 0;border:1px solid rgba(201,164,106,.45)}
+.portrait img{position:relative;width:100%;aspect-ratio:4/4.6;object-fit:cover;object-position:50% 0;border-radius:240px 240px 0 0;background:var(--ivory)}
+.sig{position:absolute;left:-6%;bottom:12%;background:rgba(14,13,11,.86);backdrop-filter:blur(6px);border:1px solid rgba(201,164,106,.4);padding:14px 18px;border-radius:4px}
+.sig b{display:block;font:italic 600 1.5rem var(--fd);color:var(--gold-l)}
+.sig span{font-size:.78rem;letter-spacing:.16em;text-transform:uppercase;color:#CFC6B6}
+@media(max-width:600px){.sig{left:10px}.portrait{width:calc(100% - 28px)}}
+.stats{position:relative;display:grid;grid-template-columns:repeat(2,1fr);border-top:1px solid rgba(246,241,232,.12)}
+@media(min-width:820px){.stats{grid-template-columns:repeat(4,1fr)}}
+.stats div{padding:28px 10px;border-right:1px solid rgba(246,241,232,.12)}
+.stats div:last-child{border-right:0}
+.stats b{display:block;font:500 clamp(2.4rem,5vw,3.6rem)/1 var(--fd);color:var(--ivory);font-variant-numeric:lining-nums tabular-nums}
+.stats span{font-size:.76rem;letter-spacing:.2em;text-transform:uppercase;color:var(--muted)}
+
+/* logos */
+.logos{background:var(--ivory);padding-block:34px;border-bottom:1px solid var(--line)}
+.logos p{text-align:center;font:500 .74rem var(--fb);letter-spacing:.32em;text-transform:uppercase;color:var(--soft);margin-bottom:22px}
+.marquee{overflow:hidden;mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent)}
+.track{display:flex;gap:64px;width:max-content;align-items:center;animation:slide 70s linear infinite}
+.dup{display:flex;gap:64px;align-items:center}
+.marquee:hover .track{animation-play-state:paused}
+.track img{height:44px;width:auto;max-width:140px;object-fit:contain;mix-blend-mode:multiply;filter:grayscale(1) contrast(1.05);opacity:.62;transition:.35s}
+.track img:hover{filter:none;opacity:1}
+@keyframes slide{to{transform:translateX(-50%)}}
+
+/* programs */
+.head-row{display:grid;gap:18px;margin-bottom:52px}
+@media(min-width:900px){.head-row{grid-template-columns:1fr auto;align-items:end}}
+.cards{display:grid;gap:18px}
+@media(min-width:700px){.cards{grid-template-columns:repeat(2,1fr)}}
+@media(min-width:1040px){.cards{grid-template-columns:repeat(6,1fr)}.card:nth-child(1),.card:nth-child(2){grid-column:span 3}.card:nth-child(n+3){grid-column:span 2}}
+.card{position:relative;display:block;border-radius:4px;overflow:hidden;color:#fff;text-decoration:none;min-height:340px;background:var(--ink)}
+.card img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform 1.1s cubic-bezier(.2,.7,.2,1),opacity .5s;opacity:.82}
+.card::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(14,13,11,0) 30%,rgba(14,13,11,.92) 100%);transition:background .5s}
+.card:hover img{transform:scale(1.07);opacity:.6}
+.card:hover::after{background:linear-gradient(180deg,rgba(14,13,11,.2) 0%,rgba(14,13,11,.95) 100%)}
+.card .in{position:absolute;inset:auto 0 0 0;z-index:1;padding:28px}
+.card .len{font:500 .7rem var(--fb);letter-spacing:.24em;text-transform:uppercase;color:var(--gold-l)}
+.card h3{font-size:clamp(1.9rem,3vw,2.5rem);margin-top:8px}
+.card p{color:#D8CFBF;font-size:.95rem;margin-top:8px;max-height:0;opacity:0;overflow:hidden;transition:max-height .5s,opacity .5s}
+.card:hover p,.card:focus-visible p{max-height:120px;opacity:1}
+@media(hover:none){.card p{max-height:none;opacity:1}}
+.card .go{display:inline-flex;gap:10px;align-items:center;margin-top:16px;font:500 .76rem var(--fb);letter-spacing:.2em;text-transform:uppercase;color:var(--gold-l)}
+.also{margin-top:34px;display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+.also span:first-child{font:500 .74rem var(--fb);letter-spacing:.24em;text-transform:uppercase;color:var(--soft);margin-right:6px}
+.also span+span{font-size:.9rem;padding:7px 16px;border:1px solid var(--line);border-radius:999px;transition:.3s}
+.also span+span:hover{border-color:var(--gold);color:var(--gold-d)}
+
+/* voices */
+.voices{background:var(--ink);color:var(--ivory)}
+.voices .lead{color:#CFC6B6}.voices .eyebrow{color:var(--gold)}
+.tabs{display:inline-flex;gap:4px;padding:4px;border-radius:999px;border:1px solid rgba(246,241,232,.18)}
+.tab{background:transparent;color:#CFC6B6;border:0;border-radius:999px;padding:11px 22px;font:500 .78rem var(--fb);letter-spacing:.16em;text-transform:uppercase;cursor:pointer;transition:.3s}
+.tab:hover{color:var(--gold-l)}
+.tab[aria-selected="true"]{background:var(--gold);color:var(--ink)}
+.reels{display:grid;gap:16px;grid-template-columns:repeat(2,1fr)}
+@media(min-width:760px){.reels{grid-template-columns:repeat(3,1fr)}}
+@media(min-width:1040px){.reels.six{grid-template-columns:repeat(6,1fr)}}
+.reel{position:relative;border:0;padding:0;cursor:pointer;border-radius:4px;overflow:hidden;aspect-ratio:9/15;background:var(--ink3);text-align:left;color:#fff}
+.reels.wide .reel{aspect-ratio:4/5}
+.reel img{width:100%;height:100%;object-fit:cover;transition:transform .8s,filter .5s;filter:saturate(.85)}
+.reel::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 45%,rgba(14,13,11,.92))}
+.reel:hover img{transform:scale(1.06);filter:saturate(1.05)}
+.reel .play{position:absolute;z-index:1;top:14px;right:14px;width:42px;height:42px;border-radius:50%;background:rgba(14,13,11,.55);border:1px solid rgba(229,203,154,.7);display:grid;place-items:center;transition:.3s}
+.reel .play::after{content:"";border-left:11px solid var(--gold-l);border-top:7px solid transparent;border-bottom:7px solid transparent;margin-left:3px}
+.reel:hover .play{background:var(--gold);transform:scale(1.1)}
+.reel:hover .play::after{border-left-color:var(--ink)}
+.reel .t{position:absolute;z-index:1;left:16px;right:16px;bottom:16px}
+.reel .t b{display:block;font:italic 600 1.3rem/1.15 var(--fd)}
+.reel .t span{font-size:.74rem;letter-spacing:.12em;text-transform:uppercase;color:var(--gold-l)}
+
+/* quotes */
+.quotes{background:var(--ivory)}
+.q-wrap{max-width:900px;margin:0 auto;text-align:center}
+.q-wrap .eyebrow{justify-content:center}
+.q-wrap .eyebrow::after{content:"";width:40px;height:1px;background:currentColor}
+.q-stage{position:relative;min-height:300px;display:grid}
+.q{grid-area:1/1;opacity:0;transform:translateY(12px);transition:opacity .7s,transform .7s;pointer-events:none}
+.q.on{opacity:1;transform:none;pointer-events:auto}
+.q blockquote{font:italic 500 clamp(1.6rem,3.4vw,2.5rem)/1.3 var(--fd);color:var(--ink)}
+.q blockquote::before{content:"“";display:block;font:500 5rem/0.6 var(--fd);color:var(--gold);margin-bottom:18px;font-style:normal}
+.q cite{display:block;margin-top:26px;font:500 .8rem var(--fb);font-style:normal;letter-spacing:.2em;text-transform:uppercase;color:var(--soft)}
+.q cite b{color:var(--ink);font-weight:600}
+.dots{display:flex;justify-content:center;gap:10px;margin-top:30px}
+.dot{width:34px;height:3px;border:0;padding:0;background:var(--line);cursor:pointer;transition:.3s}
+.dot:hover{background:var(--gold-l)}
+.dot[aria-current="true"]{background:var(--gold);width:54px}
+
+/* founder */
+.founder-grid{display:grid;gap:50px;align-items:center}
+@media(min-width:900px){.founder-grid{grid-template-columns:.95fr 1.05fr;gap:80px}}
+.f-pic{position:relative}
+.f-pic img{width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:4px}
+.f-pic::before{content:"";position:absolute;inset:22px -22px -22px 22px;border:1px solid var(--gold);border-radius:4px;z-index:-1}
+.creds{display:grid;gap:0;margin-top:34px;border-top:1px solid var(--line)}
+.creds div{display:grid;grid-template-columns:150px 1fr;gap:16px;padding:16px 0;border-bottom:1px solid var(--line);transition:padding .3s,background .3s}
+.creds div:hover{padding-left:12px;background:var(--ivory)}
+.creds b{font:500 .74rem var(--fb);letter-spacing:.2em;text-transform:uppercase;color:var(--gold-d);padding-top:4px}
+.motto{margin-top:30px;font:italic 500 1.6rem/1.3 var(--fd);color:var(--ink)}
+
+/* team */
+.team{background:var(--ink);color:var(--ivory)}
+.team .eyebrow{color:var(--gold)}
+.team-grid{display:grid;gap:16px;grid-template-columns:repeat(2,1fr)}
+@media(min-width:900px){.team-grid{grid-template-columns:repeat(4,1fr)}}
+.member figure{overflow:hidden;border-radius:4px;aspect-ratio:4/5;background:var(--ink3)}
+.member img{width:100%;height:100%;object-fit:cover;filter:grayscale(1) contrast(1.05);transition:filter .6s,transform .8s}
+.member:hover img{filter:grayscale(0);transform:scale(1.04)}
+.member h3{font-size:1.5rem;margin-top:14px;transition:color .3s}
+.member:hover h3{color:var(--gold-l)}
+.member span{font-size:.74rem;letter-spacing:.2em;text-transform:uppercase;color:var(--muted)}
+
+/* contact */
+.contact{position:relative;color:var(--ivory);overflow:hidden;padding-block:130px}
+.contact::before{content:"";position:absolute;inset:0;background:url(img/hall-wide.jpg) center/cover}
+.contact::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(14,13,11,.95) 30%,rgba(14,13,11,.75))}
+.contact .wrap{position:relative;z-index:1}
+.contact .eyebrow{color:var(--gold)}
+.contact .lead{color:#CFC6B6;margin-top:20px}
+.reach{display:grid;gap:0;margin-top:44px;max-width:640px;border-top:1px solid rgba(246,241,232,.18)}
+.reach div{display:grid;grid-template-columns:130px 1fr;gap:16px;padding:16px 0;border-bottom:1px solid rgba(246,241,232,.18)}
+.reach b{font:500 .74rem var(--fb);letter-spacing:.2em;text-transform:uppercase;color:var(--gold);padding-top:3px}
+.reach span{font:500 1.35rem var(--fd);user-select:all}
+footer{background:#080706;color:#7E766A;font-size:.82rem;letter-spacing:.06em;padding-block:26px}
+footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px}
+
+/* modal */
+.modal{position:fixed;inset:0;z-index:60;background:rgba(8,7,6,.92);display:grid;place-items:center;padding:24px}
+.modal-in{width:min(420px,100%);text-align:center}
+.modal.wide .modal-in{width:min(900px,100%)}
+.modal video{width:100%;max-height:78vh;border-radius:4px;background:#000;margin:auto}
+.modal p{margin-top:14px;color:#CFC6B6;font:italic 500 1.2rem var(--fd)}
+.close{position:absolute;top:calc(16px + env(safe-area-inset-top,0px));right:calc(18px + env(safe-area-inset-right,0px));width:46px;height:46px;border-radius:50%;border:1px solid var(--gold);background:transparent;color:var(--gold-l);font-size:1.4rem;cursor:pointer;transition:.3s}
+.close:hover{background:var(--gold);color:var(--ink)}
+
+.reveal{opacity:1;transform:none}
+.js .reveal{opacity:0;transform:translateY(24px);transition:opacity .9s ease,transform .9s ease}
+.js .reveal.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}.js .reveal{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+<header class="top" id="top">
+  <div class="wrap top-in">
+    <a class="logo" href="#home">The Missing <b>P</b></a>
+    <nav class="menu" aria-label="Sections"><a href="#programs">Programs</a><a href="#voices">Voices</a><a href="#founder">Founder</a><a href="#team">Team</a></nav>
+    <a class="btn" href="#contact">Let's talk</a>
+  </div>
+</header>
+
+<main>
+  <section class="hero" id="home">
+    <div class="wrap hero-grid">
+      <div class="hero-copy">
+        <p class="eyebrow">Corporate training · Since 2012</p>
+        <h1>Potential,<br>turned into <em>performance.</em></h1>
+        <p class="lead">Workshops in leadership, communication and team culture, designed around how your people actually work. Teams leave aligned, confident and ready to act.</p>
+        <div class="ctas"><a class="btn" href="#programs">Explore programs <span class="arrow">→</span></a><a class="btn btn-line" href="#voices">Hear from clients</a></div>
+      </div>
+      <div class="portrait">
+        <img src="img/usman-cutout.png" alt="Usman Gulzari, founder of The Missing P">
+        <div class="sig"><b>Usman Gulzari</b><span>Founder &amp; Lead Trainer</span></div>
+      </div>
+    </div>
+    <div class="wrap">
+      <div class="stats">
+        <div><b data-n="14">14</b><span>Years</span></div>
+        <div><b data-n="125" data-s="+">125+</b><span>Organisations</span></div>
+        <div><b data-n="2000" data-s="+">2,000+</b><span>Workshops</span></div>
+        <div><b data-n="50000" data-s="+">50,000+</b><span>Professionals</span></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="logos">
+    <p>Trusted by</p>
+    <div class="marquee"><div class="track" id="track"></div></div>
+  </div>
+
+  <section id="programs">
+    <div class="wrap">
+      <div class="head-row reveal">
+        <div><p class="eyebrow">Signature programs</p><h2>Five programs our clients <em>keep asking for.</em></h2></div>
+        <p class="lead">Every program starts with your context. Tap one to see the full details.</p>
+      </div>
+      <div class="cards">
+        <a class="card reveal" href="https://themissingp-training.github.io/dip/" target="_blank" rel="noopener"><img src="img/usman-stage.jpg" alt=""><div class="in"><span class="len">2 days · Communication</span><h3>Delivering Impactful Presentations</h3><p>Speak with confidence, clarity and poise in high-stakes meetings, and move the room to act.</p><span class="go">View program <span class="arrow">→</span></span></div></a>
+        <a class="card reveal" href="https://themissingp-training.github.io/Retreats/" target="_blank" rel="noopener"><img src="img/irc-circle-lawn.jpg" alt=""><div class="in"><span class="len">1–3 days · Team building</span><h3>Ascending Together</h3><p>Team retreats that break silos and send everyone back to work as one team.</p><span class="go">View program <span class="arrow">→</span></span></div></a>
+        <a class="card reveal" href="https://themissingp-training.github.io/reinvent/" target="_blank" rel="noopener"><img src="img/group-clap.jpg" alt=""><div class="in"><span class="len">2 days · Leadership</span><h3>Reinvent Yourself</h3><p>Personal leadership and effective management: ownership, priorities, upward influence and conflict.</p><span class="go">View program <span class="arrow">→</span></span></div></a>
+        <a class="card reveal" href="https://themissingp-training.github.io/ttt/" target="_blank" rel="noopener"><img src="img/usman-trainer.jpg" alt=""><div class="in"><span class="len">Trainers · L&amp;D</span><h3>Train the Trainer</h3><p>Turn subject experts into trainers people remember and learn from.</p><span class="go">View program <span class="arrow">→</span></span></div></a>
+        <a class="card reveal" href="https://themissingp-training.github.io/dip/meri-shanakht/" target="_blank" rel="noopener"><img src="img/group-2.jpg" alt=""><div class="in"><span class="len">1 day · Frontline · Urdu</span><h3>Meri Shanakht</h3><p>225+ workshops helping frontline teams take ownership and feel proud of where they work.</p><span class="go">View program <span class="arrow">→</span></span></div></a>
+      </div>
+      <div class="also reveal"><span>Also delivered</span><span>Negotiation Skills</span><span>Emotional Intelligence</span><span>Leading Change</span><span>Building Resilience</span><span>Customer Service</span><span>Getting Things Done</span><span>Impactful Presence &amp; Selling</span></div>
+    </div>
+  </section>
+
+  <section class="voices" id="voices">
+    <div class="wrap">
+      <div class="head-row reveal">
+        <div><p class="eyebrow">In their own words</p><h2>Don't take our word <em>for it.</em></h2></div>
+        <div class="tabs" role="tablist"><button type="button" class="tab" role="tab" data-t="clients" aria-selected="true">Client voices</button><button type="button" class="tab" role="tab" data-t="room" aria-selected="false">Inside the room</button></div>
+      </div>
+      <div class="reels six" id="r-clients">
+        <button type="button" class="reel" data-v="vid/nadir.mp4" data-c="Nadir Khusro Gillani · CCO, Lucky Cement"><img src="vid/nadir.jpg" alt=""><span class="play"></span><span class="t"><b>Nadir Khusro Gillani</b><span>CCO · Lucky Cement</span></span></button>
+        <button type="button" class="reel" data-v="vid/bilal.mp4" data-c="Muhammad Bilal · Head of HR, AGTL"><img src="vid/bilal.jpg" alt=""><span class="play"></span><span class="t"><b>Muhammad Bilal</b><span>Head of HR · AGTL</span></span></button>
+        <button type="button" class="reel" data-v="vid/zubia.mp4" data-c="Zubia Shehryar · Regional Learning Head, Faysal Bank"><img src="vid/zubia.jpg" alt="" style="object-position:30% 50%"><span class="play"></span><span class="t"><b>Zubia Shehryar</b><span>Faysal Bank</span></span></button>
+        <button type="button" class="reel" data-v="vid/daniyal.mp4" data-c="Mr. Daniyal · Telenor"><img src="vid/daniyal.jpg" alt="" style="object-position:45% 30%"><span class="play"></span><span class="t"><b>Mr. Daniyal</b><span>Telenor</span></span></button>
+        <button type="button" class="reel" data-v="vid/farid.mp4" data-c="Farid Jaffer · Director, Jaffer Brothers"><img src="vid/farid.jpg" alt=""><span class="play"></span><span class="t"><b>Farid Jaffer</b><span>Jaffer Brothers</span></span></button>
+        <button type="button" class="reel" data-v="vid/ffc.mp4" data-c="Participant · Meri Shanakht at FFC"><img src="vid/ffc.jpg" alt=""><span class="play"></span><span class="t"><b>Meri Shanakht</b><span>FFC</span></span></button>
+      </div>
+      <div class="reels wide" id="r-room" hidden>
+        <button type="button" class="reel" data-v="vid/retreat.mp4" data-c="Team retreat highlights"><img src="vid/retreat.jpg" alt=""><span class="play"></span><span class="t"><b>Team retreat</b><span>Highlights</span></span></button>
+        <button type="button" class="reel" data-v="vid/suzuki.mp4" data-c="Workshop highlights · Pak Suzuki"><img src="vid/suzuki.jpg" alt=""><span class="play"></span><span class="t"><b>Pak Suzuki</b><span>Workshop highlights</span></span></button>
+        <button type="button" class="reel" data-v="vid/mdm.mp4" data-c="MDM retreat · Ramada, Murree" data-wide="1"><img src="vid/mdm.jpg" alt=""><span class="play"></span><span class="t"><b>MDM</b><span>Ramada, Murree</span></span></button>
+      </div>
+    </div>
+  </section>
+
+  <section class="quotes">
+    <div class="q-wrap reveal">
+      <p class="eyebrow">What clients write</p>
+      <div class="q-stage">
+        <div class="q on"><blockquote>He is great in not only understanding the audience but also delivering post-training assistance. Truly a benchmark in the industry.</blockquote><cite><b>Aleena Tanvir</b> · Global L&amp;D Partner, Telenor Pakistan</cite></div>
+        <div class="q"><blockquote>We noticed an immediate change in our behaviours and responses. We highly recommend this session to other organisations.</blockquote><cite><b>Usman Tahir</b> · Factory Manager, Unilever</cite></div>
+        <div class="q"><blockquote>The response turned out to be extraordinary. Usman's energy and facilitation style kept the audience engaged throughout.</blockquote><cite><b>Junaid Asrar</b> · Head of Talent Sustainability, Fatima Group</cite></div>
+        <div class="q"><blockquote>The overall feedback from the participants is very positive. The session was rated extremely useful and of great benefit.</blockquote><cite><b>Melinda Good</b> · Operations Manager, The World Bank</cite></div>
+        <div class="q"><blockquote>Lots of fun and laughter with lots of important takeaways. It brought our staff closer together.</blockquote><cite><b>Sawai Malhi</b> · UN Women</cite></div>
+      </div>
+      <div class="dots" id="dots"></div>
+    </div>
+  </section>
+
+  <section id="founder">
+    <div class="wrap founder-grid">
+      <div class="f-pic reveal"><img src="img/usman-mic.jpg" alt="Usman Gulzari facilitating a workshop"></div>
+      <div class="reveal">
+        <p class="eyebrow">Founder &amp; lead trainer</p>
+        <h2>Usman <em>Gulzari</em></h2>
+        <p class="lead" style="margin-top:22px">Corporate trainer and public speaking coach who believes every person already has what they need to succeed; they just need to become aware of it.</p>
+        <div class="creds">
+          <div><b>Author</b><span><i>Wings to Fly</i>, a book on growth and self-belief</span></div>
+          <div><b>Recognised</b><span>One of Pakistan's 33 most influential personalities in <i>The Change Makers</i></span></div>
+          <div><b>Speaker</b><span>Former president, Islamabad Toastmasters · Hum News, PTV, 92 News</span></div>
+          <div><b>Education</b><span>MS Marketing, SZABIST Islamabad</span></div>
+        </div>
+        <p class="motto">"If you have a strong why, your how becomes easier."</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="team" id="team">
+    <div class="wrap">
+      <div class="head-row reveal"><div><p class="eyebrow">The team</p><h2>The people behind <em>every program.</em></h2></div></div>
+      <div class="team-grid">
+        <div class="member reveal"><figure><img src="team/muhammad-tahir.jpg" alt="Muhammad Tahir"></figure><h3>Muhammad Tahir</h3><span>&nbsp;</span></div>
+        <div class="member reveal"><figure><img src="team/aniqa-malik.jpg" alt="Aniqa Malik"></figure><h3>Aniqa Malik</h3><span>Client Success Lead</span></div>
+        <div class="member reveal"><figure><img src="team/qamar-sheraz.jpg" alt="Qamar Sheraz"></figure><h3>Qamar Sheraz</h3><span>&nbsp;</span></div>
+        <div class="member reveal"><figure><img src="team/wardah-rizwan.jpg" alt="Wardah Rizwan"></figure><h3>Wardah Rizwan</h3><span>&nbsp;</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact" id="contact">
+    <div class="wrap">
+      <p class="eyebrow">Let's build your next program</p>
+      <h2>Tell us the challenge.<br><em>We'll shape the program.</em></h2>
+      <p class="lead">A short call is all it takes to start. We listen first, then come back with a program built around your team.</p>
+      <div class="ctas"><a class="btn" href="https://calendly.com/themissingp-support/30min" target="_blank" rel="noopener">Book a call <span class="arrow">→</span></a></div>
+      <div class="reach">
+        <div><b>WhatsApp</b><span>0335-0560516</span></div>
+        <div><b>Email</b><span>usman@themissingp.com</span></div>
+        <div><b>Website</b><span>www.TheMissingP.com</span></div>
+      </div>
+    </div>
+  </section>
+</main>
+<footer><div class="wrap"><span>© The Missing P · Empowering Human Potential</span><span>Pakistan</span></div></footer>
+
+<div class="modal" id="modal" hidden role="dialog" aria-modal="true" aria-label="Video">
+  <button type="button" class="close" id="close" aria-label="Close">×</button>
+  <div class="modal-in"><video id="mv" controls playsinline></video><p id="mc"></p></div>
+</div>
+
+<script>
+(function(){
+  document.documentElement.classList.add('js');
+  var L=["lci","unilever","engro","telenor","worldbank","suzuki","fatima","hbl","jazz","ke","unwomen","national-foods","shan","eu","giz","irc","hubco","savethechildren","malteser","bestway","teradata","maroof"];
+  var row=L.map(function(n){return '<img src="logos/'+n+'.png" alt="'+n.replace(/-/g,' ')+'">'}).join('');
+  document.getElementById('track').innerHTML=row+'<span class="dup" aria-hidden="true">'+row+'</span>';
+
+  var top=document.getElementById('top');
+  function onScroll(){top.classList.toggle('solid',scrollY>40)} onScroll(); addEventListener('scroll',onScroll,{passive:true});
+
+  var tabs=document.querySelectorAll('.tab');
+  tabs.forEach(function(t){t.addEventListener('click',function(){tabs.forEach(function(x){x.setAttribute('aria-selected',x===t)});
+    document.getElementById('r-clients').hidden=t.dataset.t!=='clients';document.getElementById('r-room').hidden=t.dataset.t!=='room';})});
+
+  var modal=document.getElementById('modal'),mv=document.getElementById('mv'),mc=document.getElementById('mc');
+  document.querySelectorAll('.reel').forEach(function(r){r.addEventListener('click',function(){
+    mv.src=r.dataset.v;mv.poster=r.querySelector('img').src;mc.textContent=r.dataset.c;modal.classList.toggle('wide',!!r.dataset.wide);modal.hidden=false;
+    var p=mv.play();if(p&&p.catch)p.catch(function(){});})});
+  function shut(){modal.hidden=true;mv.pause();mv.removeAttribute('src');mv.load()}
+  document.getElementById('close').onclick=shut;
+  modal.addEventListener('click',function(e){if(e.target===modal)shut()});
+  addEventListener('keydown',function(e){if(e.key==='Escape'&&!modal.hidden)shut()});
+
+  var qs=document.querySelectorAll('.q'),dots=document.getElementById('dots'),qi=0,timer;
+  qs.forEach(function(_,i){var d=document.createElement('button');d.type='button';d.className='dot';d.setAttribute('aria-label','Testimonial '+(i+1));d.onclick=function(){go(i);restart()};dots.appendChild(d)});
+  function go(i){qi=i;qs.forEach(function(q,j){q.classList.toggle('on',j===i)});dots.querySelectorAll('.dot').forEach(function(d,j){d.setAttribute('aria-current',j===i)})}
+  function restart(){clearInterval(timer);if(!matchMedia('(prefers-reduced-motion: reduce)').matches)timer=setInterval(function(){go((qi+1)%qs.length)},6500)}
+  go(0);restart();
+
+  var links=document.querySelectorAll('.menu a');
+  if('IntersectionObserver' in window){
+    var rv=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');rv.unobserve(e.target)}})},{threshold:.12});
+    document.querySelectorAll('.reveal').forEach(function(el){rv.observe(el)});
+    var so=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting)links.forEach(function(a){a.classList.toggle('on',a.getAttribute('href')==='#'+e.target.id)})})},{rootMargin:'-45% 0px -50% 0px'});
+    document.querySelectorAll('main section[id]').forEach(function(s){so.observe(s)});
+    if(!matchMedia('(prefers-reduced-motion: reduce)').matches){
+      var done=false;new IntersectionObserver(function(es){if(done||!es[0].isIntersecting)return;done=true;
+        document.querySelectorAll('.stats b[data-n]').forEach(function(el){var t=+el.dataset.n,sf=el.dataset.s||'',st=null;
+          function f(ts){if(!st)st=ts;var p=Math.min((ts-st)/1400,1);el.textContent=Math.round(t*(1-Math.pow(1-p,3))).toLocaleString('en-US')+sf;if(p<1)requestAnimationFrame(f)}requestAnimationFrame(f)})},{threshold:.5}).observe(document.querySelector('.stats'));
+    }
+  } else { document.querySelectorAll('.reveal').forEach(function(el){el.classList.add('in')}); }
+})();
+</script>
+</body>
+</html>
