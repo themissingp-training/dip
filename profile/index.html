@@ -85,8 +85,8 @@ h2 em,h1 em{font-style:italic;color:var(--gold)}
 .track{display:flex;gap:64px;width:max-content;align-items:center;animation:slide 70s linear infinite}
 .dup{display:flex;gap:64px;align-items:center}
 .marquee:hover .track{animation-play-state:paused}
-.track img{height:44px;width:auto;max-width:140px;object-fit:contain;mix-blend-mode:multiply;filter:grayscale(1) contrast(1.05);opacity:.62;transition:.35s}
-.track img:hover{filter:none;opacity:1}
+.track img{height:46px;width:auto;max-width:140px;object-fit:contain;mix-blend-mode:multiply;transition:transform .35s}
+.track img:hover{transform:scale(1.1)}
 @keyframes slide{to{transform:translateX(-50%)}}
 
 /* programs */
