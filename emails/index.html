@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>TMP Field Notes · Email series</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;1,500&family=Jost:wght@400;500;600&display=swap">
+<style>
+:root{--ink:#0E0D0B;--ink3:#221F18;--ivory:#F6F1E8;--paper:#FBF8F2;--line:#E4DACA;--soft:#6E665A;--gold:#C9A46A;--gold-l:#E5CB9A;--gold-d:#9B7A43;--fd:"Cormorant Garamond",Georgia,serif;--fb:"Jost",system-ui,sans-serif;color-scheme:light}
+*{box-sizing:border-box}[hidden]{display:none!important}
+body{margin:0;background:var(--paper);color:var(--ink);font:400 16px/1.65 var(--fb)}
+p,h1,h2,h3,ol,ul{margin:0}
+.wrap{max-width:1180px;margin:0 auto;padding:0 max(20px,env(safe-area-inset-left,0px))}
+header{background:var(--ink);color:var(--ivory);padding:56px 0 50px}
+.eb{font:500 .72rem var(--fb);letter-spacing:.3em;text-transform:uppercase;color:var(--gold)}
+h1{font:500 clamp(2.4rem,6vw,4rem)/1.02 var(--fd);margin-top:14px} h1 em,h2 em{color:var(--gold);font-style:italic}
+header p.l{color:#CFC6B6;max-width:62ch;margin-top:16px}
+.facts{display:flex;flex-wrap:wrap;gap:10px;margin-top:24px}.facts span{border:1px solid rgba(246,241,232,.2);border-radius:999px;padding:7px 16px;font-size:.86rem}.facts b{color:var(--gold-l)}
+section{padding:64px 0}
+h2{font:500 clamp(2rem,4.4vw,2.9rem)/1.05 var(--fd);margin:10px 0 26px}
+.eb.dk{color:var(--gold-d)}
+.viewer{display:grid;gap:22px}
+@media(min-width:960px){.viewer{grid-template-columns:360px 1fr}}
+.list{display:grid;gap:8px;align-content:start}
+.em{text-align:left;font:inherit;background:#fff;border:1px solid var(--line);border-left:3px solid transparent;border-radius:4px;padding:14px 16px;cursor:pointer;display:grid;gap:2px;transition:.25s}
+.em:hover{border-left-color:var(--gold-l);background:var(--ivory)}
+.em[aria-selected="true"]{border-left-color:var(--gold);background:var(--ink);color:var(--ivory)}
+.em .d{font:600 .7rem var(--fb);letter-spacing:.2em;text-transform:uppercase;color:var(--gold-d)}
+.em[aria-selected="true"] .d{color:var(--gold)}
+.em b{font:500 1.2rem/1.2 var(--fd)} .em .pv{font-size:.84rem;color:var(--soft)} .em[aria-selected="true"] .pv{color:#CFC6B6}
+.frame{background:#E9E3D8;border-radius:6px;padding:14px;display:grid;gap:12px;min-width:0}
+.bar{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:10px}
+.subj{font-size:.9rem;color:var(--soft)}.subj b{color:var(--ink)}
+.sw{display:inline-flex;border:1px solid var(--line);border-radius:999px;background:#fff;padding:3px}
+.sw button{border:0;background:transparent;border-radius:999px;padding:7px 14px;font:500 .76rem var(--fb);letter-spacing:.12em;text-transform:uppercase;cursor:pointer;color:var(--soft)}
+.sw button[aria-pressed="true"]{background:var(--ink);color:var(--gold-l)}
+.sw button:hover{color:var(--ink)}
+iframe{width:100%;height:1250px;border:0;border-radius:4px;background:#EFE9DE;margin:0 auto;display:block;transition:width .3s}
+iframe.mob{width:390px;max-width:100%}
+.flow{display:grid;gap:12px}
+@media(min-width:880px){.flow{grid-template-columns:repeat(5,1fr)}}
+.step{background:#fff;border:1px solid var(--line);border-radius:4px;padding:18px;position:relative;transition:.25s}
+.step:hover{border-color:var(--gold);transform:translateY(-3px)}
+.step i{font:500 2.2rem/1 var(--fd);color:var(--gold);font-style:normal}
+.step h3{font:600 1rem var(--fb);margin:8px 0 4px} .step p{font-size:.9rem;color:var(--soft)}
+.dark{background:var(--ink);color:var(--ivory)} .dark .eb{color:var(--gold)}
+.cols{display:grid;gap:14px;margin-top:6px}@media(min-width:820px){.cols{grid-template-columns:repeat(3,1fr)}}
+.col{border:1px solid rgba(246,241,232,.15);border-radius:4px;padding:20px}.col h3{font:500 1.5rem var(--fd);color:var(--gold-l);margin-bottom:8px}
+.col li{margin-bottom:6px;color:#D8CFBF} .col code{color:var(--gold-l)}
+table.cols-t{width:100%;border-collapse:collapse;font-size:.92rem;background:#fff}
+.cols-t th,.cols-t td{border:1px solid var(--line);padding:8px 10px;text-align:left}.cols-t th{background:var(--ivory);font-weight:600}
+.scroll{overflow-x:auto}
+footer{padding:24px 0;background:#080706;color:#7E766A;font-size:.82rem}
+</style></head><body>
+<header><div class="wrap">
+<p class="eb">The Missing P · Client email series</p>
+<h1>Field notes, <em>every 15 days.</em></h1>
+<p class="l">Six short emails that give clients something useful first (a tool, a story, a checklist), then invite a conversation. Sent automatically through Make.com from a Google Sheet.</p>
+<div class="facts"><span><b>6</b> emails</span><span><b>Every 15 days</b> · 75-day cycle</span><span>Personalised with name &amp; company</span><span>Stops when a client replies</span></div>
+</div></header>
+
+<section><div class="wrap">
+<p class="eb dk">The emails</p><h2>Preview the <em>series</em></h2>
+<div class="viewer">
+<div class="list" role="tablist"><button type="button" class="em" data-f="01-the-97-percent.html" aria-selected="true"><span class="d">Day 0</span><b>Why good teams settle for 97%</b><span class="pv">A 3-question check you can run with your team this week.</span></button><button type="button" class="em" data-f="02-lucky-cement.html" aria-selected="false"><span class="d">Day 15</span><b>What Lucky Cement's CCO said after day two</b><span class="pv">30 seconds, in his own words.</span></button><button type="button" class="em" data-f="03-presentations.html" aria-selected="false"><span class="d">Day 30</span><b>3 fixes for presentations that don't move people</b><span class="pv">Your team's next big meeting, made sharper.</span></button><button type="button" class="em" data-f="04-retreat-planning.html" aria-selected="false"><span class="d">Day 45</span><b>Planning a team retreat? 5 questions to ask first</b><span class="pv">A short checklist before you book the venue.</span></button><button type="button" class="em" data-f="05-frontline.html" aria-selected="false"><span class="d">Day 60</span><b>Your frontline shapes your culture every day</b><span class="pv">Why 225+ frontline teams have done Meri Shanakht.</span></button><button type="button" class="em" data-f="06-close-the-loop.html" aria-selected="false"><span class="d">Day 75</span><b>Shall I close the loop, {{first_name}}?</b><span class="pv">One quick question about {{company}}'s plans.</span></button></div>
+<div class="frame"><div class="bar"><span class="subj" id="subj"></span>
+<span class="sw"><button type="button" data-m="d" aria-pressed="true">Desktop</button><button type="button" data-m="m" aria-pressed="false">Phone</button></span></div>
+<iframe id="ifr" title="Email preview"></iframe></div>
+</div></div></section>
+
+<section style="background:var(--ivory)"><div class="wrap">
+<p class="eb dk">How it works</p><h2>From Google Sheet to inbox, <em>automatically</em></h2>
+<div class="flow">
+<div class="step"><i>01</i><h3>Client list</h3><p>A Google Sheet with every client: name, email, company, and which email they received last.</p></div>
+<div class="step"><i>02</i><h3>Daily check</h3><p>Make.com runs once a day and finds clients whose next email is due (15 days after the last).</p></div>
+<div class="step"><i>03</i><h3>Pick the email</h3><p>It picks the next email in the series and fills in their name and company.</p></div>
+<div class="step"><i>04</i><h3>Send from Gmail</h3><p>Sent from your real address, so replies come straight to you.</p></div>
+<div class="step"><i>05</i><h3>Update &amp; stop</h3><p>The sheet records what was sent. Anyone who replies or unsubscribes is skipped from then on.</p></div>
+</div>
+<h3 style="font:500 1.6rem var(--fd);margin:36px 0 12px">Google Sheet columns</h3>
+<div class="scroll"><table class="cols-t"><tr><th>first_name</th><th>email</th><th>company</th><th>last_email</th><th>last_sent</th><th>status</th></tr>
+<tr><td>Ayesha</td><td>ayesha@company.com</td><td>Engro</td><td>2</td><td>2026-11-20</td><td>active</td></tr>
+<tr><td>Bilal</td><td>bilal@agtl.com</td><td>AGTL</td><td>6</td><td>2026-11-01</td><td>replied</td></tr></table></div>
+<p style="color:var(--soft);font-size:.9rem;margin-top:8px">Example rows. <b>status</b> is active, replied or unsubscribed. Only "active" rows get emails.</p>
+</div></section>
+
+<section class="dark"><div class="wrap">
+<p class="eb">Good practice</p><h2 style="color:var(--ivory)">So emails land in the inbox, <em>not spam</em></h2>
+<div class="cols">
+<div class="col"><h3>Send gently</h3><ul><li>Start with 20–30 emails a day, then grow</li><li>Send Tuesday–Thursday, 10am–12pm</li><li>Gmail limit: about 500/day (2,000 on Google Workspace)</li></ul></div>
+<div class="col"><h3>Stay personal</h3><ul><li>Send from a real person, not "info@"</li><li>Always use <code>{{first_name}}</code> and <code>{{company}}</code></li><li>Reply to every response yourself</li></ul></div>
+<div class="col"><h3>Respect the inbox</h3><ul><li>Every email has a one-line unsubscribe</li><li>Stop the series when someone replies</li><li>After email 6, pause that client for 3 months</li></ul></div>
+</div></div></section>
+<footer><div class="wrap">The Missing P · Field notes email series</div></footer>
+<script>
+(function(){
+ var ifr=document.getElementById('ifr'),subj=document.getElementById('subj'),ems=document.querySelectorAll('.em');
+ function show(b){ems.forEach(function(x){x.setAttribute('aria-selected',x===b)});ifr.src=b.dataset.f;subj.innerHTML='Subject: <b>'+b.querySelector('b').textContent+'</b>';}
+ ems.forEach(function(b){b.addEventListener('click',function(){show(b)})});show(ems[0]);
+ document.querySelectorAll('.sw button').forEach(function(b){b.addEventListener('click',function(){document.querySelectorAll('.sw button').forEach(function(x){x.setAttribute('aria-pressed',x===b)});ifr.classList.toggle('mob',b.dataset.m==='m')})});
+})();
+</script></body></html>
