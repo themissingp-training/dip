@@ -53,8 +53,8 @@ footer{padding:24px 0;background:#080706;color:#7E766A;font-size:.82rem}
 <header><div class="wrap">
 <p class="eb">The Missing P · Client email series</p>
 <h1>Field notes, <em>every 15 days.</em></h1>
-<p class="l">Six short emails that give clients something useful first (a tool, a story, a checklist), then invite a conversation. Sent automatically through Make.com from a Google Sheet.</p>
-<div class="facts"><span><b>6</b> emails</span><span><b>Every 15 days</b> · 75-day cycle</span><span>Personalised with name &amp; company</span><span>Stops when a client replies</span></div>
+<p class="l">Six short emails that give clients something useful first (a tool, a story, a checklist), then invite a conversation. Click any email on the left to read it as the client will see it.</p>
+<div class="facts"><span><b>6</b> emails</span><span><b>Every 15 days</b> · 75-day cycle</span><span>Personalised with name &amp; company</span><span>Signed by Usman Gulzari</span></div>
 </div></header>
 
 <section><div class="wrap">
@@ -66,29 +66,6 @@ footer{padding:24px 0;background:#080706;color:#7E766A;font-size:.82rem}
 <iframe id="ifr" title="Email preview"></iframe></div>
 </div></div></section>
 
-<section style="background:var(--ivory)"><div class="wrap">
-<p class="eb dk">How it works</p><h2>From Google Sheet to inbox, <em>automatically</em></h2>
-<div class="flow">
-<div class="step"><i>01</i><h3>Client list</h3><p>A Google Sheet with every client: name, email, company, and which email they received last.</p></div>
-<div class="step"><i>02</i><h3>Daily check</h3><p>Make.com runs once a day and finds clients whose next email is due (15 days after the last).</p></div>
-<div class="step"><i>03</i><h3>Pick the email</h3><p>It picks the next email in the series and fills in their name and company.</p></div>
-<div class="step"><i>04</i><h3>Send from Gmail</h3><p>Sent from your real address, so replies come straight to you.</p></div>
-<div class="step"><i>05</i><h3>Update &amp; stop</h3><p>The sheet records what was sent. Anyone who replies or unsubscribes is skipped from then on.</p></div>
-</div>
-<h3 style="font:500 1.6rem var(--fd);margin:36px 0 12px">Google Sheet columns</h3>
-<div class="scroll"><table class="cols-t"><tr><th>first_name</th><th>email</th><th>company</th><th>last_email</th><th>last_sent</th><th>status</th></tr>
-<tr><td>Ayesha</td><td>ayesha@company.com</td><td>Engro</td><td>2</td><td>2026-11-20</td><td>active</td></tr>
-<tr><td>Bilal</td><td>bilal@agtl.com</td><td>AGTL</td><td>6</td><td>2026-11-01</td><td>replied</td></tr></table></div>
-<p style="color:var(--soft);font-size:.9rem;margin-top:8px">Example rows. <b>status</b> is active, replied or unsubscribed. Only "active" rows get emails.</p>
-</div></section>
-
-<section class="dark"><div class="wrap">
-<p class="eb">Good practice</p><h2 style="color:var(--ivory)">So emails land in the inbox, <em>not spam</em></h2>
-<div class="cols">
-<div class="col"><h3>Send gently</h3><ul><li>Start with 20–30 emails a day, then grow</li><li>Send Tuesday–Thursday, 10am–12pm</li><li>Gmail limit: about 500/day (2,000 on Google Workspace)</li></ul></div>
-<div class="col"><h3>Stay personal</h3><ul><li>Send from a real person, not "info@"</li><li>Always use <code>{{first_name}}</code> and <code>{{company}}</code></li><li>Reply to every response yourself</li></ul></div>
-<div class="col"><h3>Respect the inbox</h3><ul><li>Every email has a one-line unsubscribe</li><li>Stop the series when someone replies</li><li>After email 6, pause that client for 3 months</li></ul></div>
-</div></div></section>
 <footer><div class="wrap">The Missing P · Field notes email series</div></footer>
 <script>
 (function(){
